@@ -5,36 +5,48 @@
 //  Created by Breno Harris on 29/06/23.
 //
 
-import Foundation
+import CloudKit
+import UIKit
 
-class UserModel {
-    private var name: String
-    private var year: String
-    private var origin: String
-    private var course: String
-    private var interests: [String]?
-    private var entities: [String]?
-    private var experience: [String]?
-    private var pronouns: String?
-    private var description: String?
+class UserModel: UITableViewCell {
     
-    weak var delegate: UserDelegate?
+    static let reuseID = "TaskCell"
     
-    init(name: String, year: String, origin: String, course: String, interests: [String]? = nil, entities: [String]? = nil, experience: [String]? = nil, pronouns: String? = nil, description: String? = nil) {
-        self.name = name
-        self.year = year
-        self.origin = origin
-        self.course = course
-        self.interests = interests
-        self.entities = entities
-        self.experience = experience
-        self.pronouns = pronouns
-        self.description = description
+    private var record: CKRecord?
+    private var name = UILabel(frame: .zero)
+    
+    
+    
+    
+    //weak var delegate: TaskCheckDelegate?
+ 
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
     }
     
-    @objc func requestData() {
+ 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    override func prepareForReuse() {
+        self.record = nil
+    }
+     
+    
+    func set(record: CKRecord) {
+        self.record = record
         
-        delegate?.didRecieveDataUpdate(data: data)
+        name.text = record.object(forKey: "name") as? String ?? ""
+        /*
+        if let createdDate = record.object(forKey: "createdAt") as? Date {
+            createdAtLabel.text = createdDate.formatted(.dateTime)
+        } else {
+            createdAtLabel.text = ""
+        }
+        */
     }
     
 }

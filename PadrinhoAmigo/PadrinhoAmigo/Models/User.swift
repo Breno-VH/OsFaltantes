@@ -21,7 +21,7 @@ class User {
     private var img: UIImage?
     private var ehCalouro: Bool?
     
-    weak var delegate: UserDelegate?
+    
     
     private var names: [String] = ["Gustavo Castro", "Amanda Kamia", "Gabriel Lima", "Lara Simas", "Bruno Tavares"]
     private var imgs: [UIImage?] = [UIImage(named: "Profile1"), UIImage(named: "Profile2"), UIImage(named: "Profile3"), UIImage(named: "Profile4"), UIImage(named: "Profile5"),]

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		057F6C472A5318B600C61249 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F6C462A5318B600C61249 /* UserCell.swift */; };
+		057F6C492A53436500C61249 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F6C482A53436500C61249 /* CloudKitManager.swift */; };
 		05AC75AB2A4EFB800069C198 /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AC75AA2A4EFB800069C198 /* Perfil.storyboard */; };
 		05AC75AD2A4EFBDC0069C198 /* RegistrarPerfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AC75AC2A4EFBDC0069C198 /* RegistrarPerfil.storyboard */; };
 		05AC75AF2A4EFC6D0069C198 /* PerfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		057F6C462A5318B600C61249 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		057F6C482A53436500C61249 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		05AC75AA2A4EFB800069C198 /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
 		05AC75AC2A4EFBDC0069C198 /* RegistrarPerfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrarPerfil.storyboard; sourceTree = "<group>"; };
 		05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				8B24E34D2A4DAB0900C60D57 /* User.swift */,
 				057F6C462A5318B600C61249 /* UserCell.swift */,
+				057F6C482A53436500C61249 /* CloudKitManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				057F6C472A5318B600C61249 /* UserCell.swift in Sources */,
 				8B24E3362A4C57DB00C60D57 /* ViewController.swift in Sources */,
+				057F6C492A53436500C61249 /* CloudKitManager.swift in Sources */,
 				8B24E3322A4C57DB00C60D57 /* AppDelegate.swift in Sources */,
 				05AC75AF2A4EFC6D0069C198 /* PerfilController.swift in Sources */,
 				8B24E34C2A4DA8D700C60D57 /* ComunidadeController.swift in Sources */,

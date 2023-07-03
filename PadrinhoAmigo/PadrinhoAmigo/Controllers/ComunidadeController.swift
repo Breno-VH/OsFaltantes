@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class ComunidadeController:  UIViewController{
     
@@ -15,6 +16,24 @@ class ComunidadeController:  UIViewController{
         super.viewDidLoad()
         personList.dataSource = self
         personList.delegate = self
+    }
+    
+    private var manager: CloudKitManager
+    private var users = [User]()
+    private var records = [CKRecord]()
+    
+    init(manager: CloudKitManager) {
+        self.manager = manager
+        super.init()
+      }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(records: [CKRecord]) {
+        self.records = records
+        //tableView.reloadData()
     }
 }
 

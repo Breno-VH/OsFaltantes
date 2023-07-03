@@ -7,23 +7,35 @@
 
 import UIKit
 
-class ComunidadeController: UIViewController, UserDelegate {
+class ComunidadeController:  UIViewController{
     
-    
-    func didRecieveDataUpdate(data: UserModel) {
-        data.delegate? = self
-    }
-    
-    
-    @IBOutlet weak var personList: UITableView!
-    
-    
-    @IBOutlet weak var title: UILabel!
-    
+    @IBOutlet var personList: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        personList.dataSource = self
+        personList.delegate = self
+    }
+}
+
+extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        128
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
+        
+        cell.show(user: User(), i: indexPath.row)
+        
+        return cell
     }
     
 }
+
+

@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     private var comunidade: ComunidadeController!
     private let manager = CloudKitManager()
     override func viewDidLoad() {

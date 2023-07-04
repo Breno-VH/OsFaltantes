@@ -15,7 +15,9 @@ class UserCell: UITableViewCell {
     
   
     func show(user: User, i: Int){
-        name.text = user.getName(n: i)
+        
+        //name.text = user.getName(n: i)
+        name.text = user.name
         img.image = user.getImg(n: i)
     }
 }

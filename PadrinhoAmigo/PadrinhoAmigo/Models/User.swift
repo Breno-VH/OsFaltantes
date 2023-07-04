@@ -34,6 +34,8 @@ class User {
         self.pronomes = record["pronomes"] as? String ?? ""
     }
     
+    init() {}
+    
     init(name: String, ano: Int? = nil, origem: String? = nil, curso: String? = nil, interesses: [String]? = nil, entidades: [String]? = nil, experiencia: [String]? = nil, pronomes: String? = nil, descrição: String? = nil, img: UIImage? = nil, ehCalouro: Bool? = nil) {
         self.name = name
         self.ano = ano

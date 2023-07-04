@@ -30,19 +30,14 @@ class ComunidadeController: UIViewController {
     func set(records: [CKRecord]) {
         self.records = records
         self.users = records.compactMap({User(record: $0)})
-        users.forEach({
-            user in
-            user.printName()
-        })
         
-        //self?.tableView.reloadData()
+        self.personList.reloadData()
     }
     
   
     private func fetchRecords() async {
       do {
         let records = try await manager.fetch()
-        //print(records)
         DispatchQueue.main.async {
           self.set(records: records)
         }
@@ -55,8 +50,8 @@ class ComunidadeController: UIViewController {
 extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
-        //records.count
+        
+        records.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -66,7 +61,7 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
         
-        //cell.show(user: User(record: <#CKRecord#>), i: indexPath.row)
+        cell.show(user: users[indexPath.row], i: indexPath.row)
         
         return cell
     }

@@ -74,7 +74,7 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
         cell.layer.shadowOpacity = 0.23
         cell.layer.shadowRadius = 4
         
-        cell.show(user: User(), i: indexPath.row)
+        cell.show(user: users[indexPath.row], i: indexPath.row)
         
         return cell
     }

@@ -8,32 +8,45 @@
 import UIKit
 import CloudKit
 
-class ComunidadeController:  UIViewController{
+class ComunidadeController: UIViewController {
     
     @IBOutlet var personList: UITableView!
+    
+    private let manager = CloudKitManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         personList.dataSource = self
         personList.delegate = self
+        
+        Task {
+            await fetchRecords()
+        }
     }
     
-    private var manager: CloudKitManager
     private var users = [User]()
     private var records = [CKRecord]()
     
-    init(manager: CloudKitManager) {
-        self.manager = manager
-        super.init(nibName: nil, bundle: nil)
-      }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func set(records: [CKRecord]) {
         self.records = records
-        //tableView.reloadData()
+        self.users = records.compactMap({$0.value(forKey: "name") as? User})
+        
+        self?.items = records.compactMap({$0.value(forKey: "name") as? String})
+        self?.recordsId = records.compactMap({$0.value(forKey: "recordName") as? CKRecord})
+        //self?.tableView.reloadData()
+    }
+    
+  
+    private func fetchRecords() async {
+      do {
+        let records = try await manager.fetch()
+        print(records)
+        DispatchQueue.main.async {
+          self.set(records: records)
+        }
+      } catch {
+        print(error)
+      }
     }
 }
 
@@ -41,6 +54,7 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
+        //records.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

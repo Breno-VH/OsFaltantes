@@ -31,8 +31,8 @@ class ComunidadeController: UIViewController {
         self.records = records
         self.users = records.compactMap({$0.value(forKey: "name") as? User})
         
-        self?.items = records.compactMap({$0.value(forKey: "name") as? String})
-        self?.recordsId = records.compactMap({$0.value(forKey: "recordName") as? CKRecord})
+        //self.items = records.compactMap({$0.value(forKey: "name") as? String})
+        //self.recordsId = records.compactMap({$0.value(forKey: "recordName") as? CKRecord})
         //self?.tableView.reloadData()
     }
     
@@ -61,8 +61,21 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
         128
     }
     
+    func tableView(_ tableView: UITableView, widthForRowAt indexPath: IndexPath) -> CGFloat {
+        374
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
+        
+        cell.layer.cornerRadius = 8
+        cell.layer.masksToBounds = true
+
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOffset = CGSizeMake(0, 0)
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.23
+        cell.layer.shadowRadius = 4
         
         cell.show(user: User(), i: indexPath.row)
         

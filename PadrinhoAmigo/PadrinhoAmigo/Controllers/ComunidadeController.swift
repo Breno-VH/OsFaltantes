@@ -29,10 +29,12 @@ class ComunidadeController: UIViewController {
     
     func set(records: [CKRecord]) {
         self.records = records
-        self.users = records.compactMap({$0.value(forKey: "name") as? User})
+        self.users = records.compactMap({User(record: $0)})
+        users.forEach({
+            user in
+            user.printName()
+        })
         
-        self?.items = records.compactMap({$0.value(forKey: "name") as? String})
-        self?.recordsId = records.compactMap({$0.value(forKey: "recordName") as? CKRecord})
         //self?.tableView.reloadData()
     }
     
@@ -40,7 +42,7 @@ class ComunidadeController: UIViewController {
     private func fetchRecords() async {
       do {
         let records = try await manager.fetch()
-        print(records)
+        //print(records)
         DispatchQueue.main.async {
           self.set(records: records)
         }
@@ -64,7 +66,7 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
         
-        cell.show(user: User(), i: indexPath.row)
+        //cell.show(user: User(record: <#CKRecord#>), i: indexPath.row)
         
         return cell
     }

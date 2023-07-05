@@ -24,7 +24,6 @@ class UserCell: UITableViewCell {
         //name.text = user.getName(n: i)
         name.text = user.name
         img.image = user.img
-        
         img.layer.borderWidth = 1
         img.layer.masksToBounds = false
         img.layer.borderColor = UIColor.black.cgColor
@@ -46,5 +45,15 @@ class UserCell: UITableViewCell {
             }
         }
         return interestsString
+      }
     }
-}
+
+
+
+
+
+
+
+
+
+

@@ -19,6 +19,7 @@
 		8B24E33B2A4C57DC00C60D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B24E33A2A4C57DC00C60D57 /* Assets.xcassets */; };
 		8B24E34C2A4DA8D700C60D57 /* ComunidadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24E34B2A4DA8D700C60D57 /* ComunidadeController.swift */; };
 		8B24E34E2A4DAB0900C60D57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24E34D2A4DAB0900C60D57 /* User.swift */; };
+		8BC9658D2A55AD9800433D21 /* ListCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC9658C2A55AD9800433D21 /* ListCourses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		8B24E3452A4C64EE00C60D57 /* PadrinhoAmigo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PadrinhoAmigo.entitlements; sourceTree = "<group>"; };
 		8B24E34B2A4DA8D700C60D57 /* ComunidadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComunidadeController.swift; sourceTree = "<group>"; };
 		8B24E34D2A4DAB0900C60D57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8BC9658C2A55AD9800433D21 /* ListCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCourses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				8B24E34D2A4DAB0900C60D57 /* User.swift */,
 				057F6C462A5318B600C61249 /* UserCell.swift */,
 				057F6C482A53436500C61249 /* CloudKitManager.swift */,
+				8BC9658C2A55AD9800433D21 /* ListCourses.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				8B24E3362A4C57DB00C60D57 /* ViewController.swift in Sources */,
 				057F6C492A53436500C61249 /* CloudKitManager.swift in Sources */,
 				8B24E3322A4C57DB00C60D57 /* AppDelegate.swift in Sources */,
+				8BC9658D2A55AD9800433D21 /* ListCourses.swift in Sources */,
 				05AC75AF2A4EFC6D0069C198 /* PerfilController.swift in Sources */,
 				8B24E34C2A4DA8D700C60D57 /* ComunidadeController.swift in Sources */,
 				8B24E34E2A4DAB0900C60D57 /* User.swift in Sources */,

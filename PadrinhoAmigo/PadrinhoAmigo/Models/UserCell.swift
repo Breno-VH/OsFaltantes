@@ -14,9 +14,9 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var img: UIImageView!
     
   
-    func show(user: User, i: Int){
+    func show(user: User){
         
-        //name.text = user.getName(n: i)
+        
         name.text = user.name
         img.image = user.img
         

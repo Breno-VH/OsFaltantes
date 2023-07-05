@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CloudKit
 
+
 class User {
     var name: String = ""
     var year: Int?
@@ -20,12 +21,21 @@ class User {
     var pronouns: String?
     var description: String?
     var img: UIImage?
-    var isFreshmen: Bool?
     var record: CKRecord?
-    var godParents: [User]?
-    var godChildren: [User]?
+    var godParents: [CKRecord]?
+    var godChildren: [CKRecord]?
+    var isFreshmen: Bool {
+        var currentYear = Calendar(identifier: .gregorian).dateComponents([.year], from: .now).year!
+        currentYear -= 2000
+        
+        if year == currentYear {
+            return true
+        }
+        return false
+    }
     
     init(record: CKRecord) {
+        self.record = record
         self.name = record["name"] as? String ?? ""
         self.year = record["ano"] as? Int
         self.origin = record["origem"] as? String ?? ""
@@ -35,7 +45,9 @@ class User {
         self.experience = record["experiencia"] as? [String] ?? []
         self.description = record["descrição"] as? String ?? ""
         self.pronouns = record["pronomes"] as? String ?? ""
-        self.record = record
+        self.godParents = record["padrinhos"] as? [CKRecord] ?? []
+        self.godChildren = record["afilhados"] as? [CKRecord] ?? []
+        
         
         let imageAsset = record["imagem"] as? CKAsset
         let imageUrl = imageAsset?.fileURL
@@ -44,22 +56,9 @@ class User {
             
             img = image
             img = self.resizeImage(image: img!, targetSize: CGSizeMake(90, 90))
-            
-            
-            
+               
         }
-        
-        
     }
-    
-    
-    private var names: [String] = ["Gustavo Castro", "Amanda Kamia", "Gabriel Lima", "Lara Simas", "Bruno Tavares"]
-    private var imgs: [UIImage?] = [UIImage(named: "Profile1"), UIImage(named: "Profile2"), UIImage(named: "Profile3"), UIImage(named: "Profile4"), UIImage(named: "Profile5"),]
-    
-    func getImg(n: Int) -> UIImage?{
-        return imgs[n]
-    }
-    
     
 }
 

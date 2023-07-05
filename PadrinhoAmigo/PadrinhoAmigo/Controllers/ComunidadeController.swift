@@ -66,15 +66,13 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
         
         cell.layer.cornerRadius = 8
-        cell.layer.masksToBounds = true
-
         cell.layer.masksToBounds = false
         cell.layer.shadowOffset = CGSizeMake(0, 0)
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.23
         cell.layer.shadowRadius = 4
         
-        cell.show(user: users[indexPath.row], i: indexPath.row)
+        cell.show(user: users[indexPath.row])
         
         return cell
     }

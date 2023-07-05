@@ -25,8 +25,7 @@ class User {
     var godParents: [CKRecord]?
     var godChildren: [CKRecord]?
     var isFreshmen: Bool {
-        var currentYear = Calendar(identifier: .gregorian).dateComponents([.year], from: .now).year!
-        currentYear -= 2000
+        let currentYear = Calendar(identifier: .gregorian).dateComponents([.year], from: .now).year! % 2000
         
         if year == currentYear {
             return true

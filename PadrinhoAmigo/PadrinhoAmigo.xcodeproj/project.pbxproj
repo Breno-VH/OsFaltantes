@@ -330,7 +330,7 @@
 				CODE_SIGN_ENTITLEMENTS = PadrinhoAmigo/PadrinhoAmigo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QS932KTLCZ;
+				DEVELOPMENT_TEAM = 73XDZPPBTH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PadrinhoAmigo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -359,7 +359,7 @@
 				CODE_SIGN_ENTITLEMENTS = PadrinhoAmigo/PadrinhoAmigo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QS932KTLCZ;
+				DEVELOPMENT_TEAM = 73XDZPPBTH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PadrinhoAmigo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

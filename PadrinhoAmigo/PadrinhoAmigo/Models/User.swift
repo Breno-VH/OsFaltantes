@@ -11,58 +11,83 @@ import CloudKit
 
 class User {
     var name: String = ""
-    private var ano: Int?
-    private var origem: String?
-    private var curso: String?
-    private var interesses: [String]?
-    private var entidades: [String]?
-    private var experiencia: [String]?
-    private var pronomes: String?
-    private var descrição: String?
-    private var img: UIImage?
-    private var ehCalouro: Bool?
+    var year: Int?
+    var origin: String?
+    var course: String?
+    var interests: [String]?
+    var entities: [String]?
+    var experience: [String]?
+    var pronouns: String?
+    var description: String?
+    var img: UIImage?
+    var isFreshmen: Bool?
+    var record: CKRecord?
+    var godParents: [User]?
+    var godChildren: [User]?
     
     init(record: CKRecord) {
         self.name = record["name"] as? String ?? ""
-        self.ano = record["ano"] as? Int
-        self.origem = record["origem"] as? String ?? ""
-        self.curso = record["curso"] as? String ?? ""
-        self.interesses = record["interesses"] as? [String] ?? []
-        self.entidades = record["entidades"] as? [String] ?? [""]
-        self.experiencia = record["experiencia"] as? [String] ?? []
-        self.descrição = record["descrição"] as? String ?? ""
-        self.pronomes = record["pronomes"] as? String ?? ""
+        self.year = record["ano"] as? Int
+        self.origin = record["origem"] as? String ?? ""
+        self.course = record["curso"] as? String ?? ""
+        self.interests = record["interesses"] as? [String] ?? []
+        self.entities = record["entidades"] as? [String] ?? [""]
+        self.experience = record["experiencia"] as? [String] ?? []
+        self.description = record["descrição"] as? String ?? ""
+        self.pronouns = record["pronomes"] as? String ?? ""
+        self.record = record
+        
+        let imageAsset = record["imagem"] as? CKAsset
+        let imageUrl = imageAsset?.fileURL
+        
+        if let url = imageUrl, let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+            
+            img = image
+            img = self.resizeImage(image: img!, targetSize: CGSizeMake(90, 90))
+            
+            
+            
+        }
+        
+        
     }
     
-    init() {}
-    
-    init(name: String, ano: Int? = nil, origem: String? = nil, curso: String? = nil, interesses: [String]? = nil, entidades: [String]? = nil, experiencia: [String]? = nil, pronomes: String? = nil, descrição: String? = nil, img: UIImage? = nil, ehCalouro: Bool? = nil) {
-        self.name = name
-        self.ano = ano
-        self.origem = origem
-        self.curso = curso
-        self.interesses = interesses
-        self.entidades = entidades
-        self.experiencia = experiencia
-        self.pronomes = pronomes
-        self.descrição = descrição
-        self.img = img
-        self.ehCalouro = ehCalouro
-    }
     
     private var names: [String] = ["Gustavo Castro", "Amanda Kamia", "Gabriel Lima", "Lara Simas", "Bruno Tavares"]
     private var imgs: [UIImage?] = [UIImage(named: "Profile1"), UIImage(named: "Profile2"), UIImage(named: "Profile3"), UIImage(named: "Profile4"), UIImage(named: "Profile5"),]
-    
-    func getName(n: Int) -> String{
-        return names[n]
-    }
     
     func getImg(n: Int) -> UIImage?{
         return imgs[n]
     }
     
-    func printName() {
-        print(self.name)
-    }
+    
 }
 
+extension User {
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: targetSize.width, height: targetSize.height)
+        } else {
+            newSize = CGSize(width: targetSize.width, height: targetSize.height)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+}

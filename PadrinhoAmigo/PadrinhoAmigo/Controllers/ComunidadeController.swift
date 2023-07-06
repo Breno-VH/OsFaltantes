@@ -62,6 +62,16 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
         374
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           personList.deselectRow(at: indexPath, animated: true)
+           let user = users[indexPath.row]
+           
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let vc = storyboard.instantiateViewController(withIdentifier: "PersonProfile") as! PerfilController
+             vc.displayUser = user
+           navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
         

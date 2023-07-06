@@ -160,11 +160,10 @@
         <!--Perfil-->
         <scene sceneID="CkB-2O-T4O">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ccR-2P-vnU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ccR-2P-vnU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" selectedImage="person.fill" id="DHn-74-QnK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hwi-tY-Z5d">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -176,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="2009.9236641221373" y="-294.36619718309862"/>
         </scene>
-        <!--Perfil-->
+        <!-- -->
         <scene sceneID="RcL-va-OwG">
             <objects>
-                <viewController id="2k1-z6-rTx" customClass="PerfilController" customModule="PadrinhoAmigo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonProfile" id="2k1-z6-rTx" customClass="PerfilController" customModule="PadrinhoAmigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aQQ-jU-sI7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,7 +188,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="uZN-HI-Em5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="uZN-HI-Em5" customClass="PerfilCell" customModule="PadrinhoAmigo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZN-HI-Em5" id="SNy-JC-vWU">
@@ -197,14 +196,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Engenharia elétrica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmn-jg-Xla">
-                                                    <rect key="frame" x="237" y="11" width="146" height="21"/>
+                                                    <rect key="frame" x="237" y="11" width="139" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rightLabel" destination="lmn-jg-Xla" id="SeG-ce-Glo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -238,13 +240,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="Gpk-WV-D6W"/>
-                    <navigationItem key="navigationItem" title="Perfil" id="Ufx-iv-6Ga">
-                        <barButtonItem key="backBarButtonItem" title="Comunidade" id="rdb-WE-dea"/>
+                    <navigationItem key="navigationItem" title=" " id="Ufx-iv-6Ga">
+                        <barButtonItem key="backBarButtonItem" id="rdb-WE-dea"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="BackgroundView" destination="NZG-hy-MWy" id="2xF-L8-kQM"/>
+                        <outlet property="ButtonMeApadrinhe" destination="wvl-ls-D8i" id="RHr-6w-MCC"/>
                         <outlet property="ForegroundView" destination="ogK-4J-Tzi" id="4yd-Hq-SWb"/>
+                        <outlet property="imageProfile" destination="loL-ll-vGZ" id="MHw-C9-EDo"/>
+                        <outlet property="perfilInfo" destination="9cC-ob-ef9" id="nJW-ed-6om"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvN-aU-gxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

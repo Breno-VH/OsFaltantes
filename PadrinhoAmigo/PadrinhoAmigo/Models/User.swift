@@ -88,4 +88,41 @@ extension User {
         
         return newImage
     }
+    
+    func formatInterests() -> String{
+        var interestsString: String = ""
+        for i in self.interests!{
+            interestsString += i
+            if (i != self.interests![self.interests!.count-1]){
+                interestsString += " - "
+            }
+        }
+        return interestsString
+      }
+    
+    func formatEntities() -> String{
+        var entitiesString: String = ""
+        for i in self.entities!{
+            entitiesString += i
+            if (i != self.entities![self.entities!.count-1]){
+                entitiesString += " - "
+            }
+        }
+        return entitiesString
+      }
+    
+    func formatExperiencies() -> String{
+        var experiencesString: String = ""
+        for i in self.experience!{
+            experiencesString += i
+            if (i != self.experience![self.experience!.count-1]){
+                experiencesString += " - "
+            }
+        }
+        return experiencesString
+      }
+    
+    func formatYear() -> String{
+        return "0" + String(self.year!)
+    }
 }

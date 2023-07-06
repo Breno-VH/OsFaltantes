@@ -30,23 +30,11 @@ class UserCell: UITableViewCell {
         img.layer.cornerRadius = img.frame.height/2
         img.clipsToBounds = true
         course.text = user.course
-        year.text = "0" + String(user.year!)
-        interests.text = format(interests: user.interests!)
-        
-        
+        year.text = user.formatYear()
+        interests.text = user.formatInterests()
     }
     
-    func format(interests: [String]) -> String{
-        var interestsString: String = ""
-        for i in interests{
-            interestsString += i
-            if (i != interests[interests.count-1]){
-                interestsString += " - "
-            }
-        }
-        return interestsString
-      }
-    }
+}
 
 
 

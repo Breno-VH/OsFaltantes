@@ -12,6 +12,7 @@
 		05AC75AB2A4EFB800069C198 /* Perfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AC75AA2A4EFB800069C198 /* Perfil.storyboard */; };
 		05AC75AD2A4EFBDC0069C198 /* RegistrarPerfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AC75AC2A4EFBDC0069C198 /* RegistrarPerfil.storyboard */; };
 		05AC75AF2A4EFC6D0069C198 /* PerfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */; };
+		05D6BB642A56FADC00426A2D /* PerfilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6BB632A56FADC00426A2D /* PerfilCell.swift */; };
 		05DEF2342A54F00F0039294E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DEF2332A54F00F0039294E /* Main.storyboard */; };
 		8B24E3322A4C57DB00C60D57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24E3312A4C57DB00C60D57 /* AppDelegate.swift */; };
 		8B24E3342A4C57DB00C60D57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24E3332A4C57DB00C60D57 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 		05AC75AA2A4EFB800069C198 /* Perfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Perfil.storyboard; sourceTree = "<group>"; };
 		05AC75AC2A4EFBDC0069C198 /* RegistrarPerfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrarPerfil.storyboard; sourceTree = "<group>"; };
 		05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilController.swift; sourceTree = "<group>"; };
+		05D6BB632A56FADC00426A2D /* PerfilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilCell.swift; sourceTree = "<group>"; };
 		05DEF2332A54F00F0039294E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8B24E32E2A4C57DB00C60D57 /* PadrinhoAmigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PadrinhoAmigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B24E3312A4C57DB00C60D57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				8B24E34D2A4DAB0900C60D57 /* User.swift */,
 				057F6C462A5318B600C61249 /* UserCell.swift */,
+				05D6BB632A56FADC00426A2D /* PerfilCell.swift */,
 				057F6C482A53436500C61249 /* CloudKitManager.swift */,
 				8BC9658C2A55AD9800433D21 /* ListCourses.swift */,
 			);
@@ -189,6 +192,7 @@
 				057F6C472A5318B600C61249 /* UserCell.swift in Sources */,
 				8B24E3362A4C57DB00C60D57 /* ViewController.swift in Sources */,
 				057F6C492A53436500C61249 /* CloudKitManager.swift in Sources */,
+				05D6BB642A56FADC00426A2D /* PerfilCell.swift in Sources */,
 				8B24E3322A4C57DB00C60D57 /* AppDelegate.swift in Sources */,
 				8BC9658D2A55AD9800433D21 /* ListCourses.swift in Sources */,
 				05AC75AF2A4EFC6D0069C198 /* PerfilController.swift in Sources */,

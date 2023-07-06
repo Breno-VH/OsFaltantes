@@ -183,8 +183,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZG-hy-MWy" userLabel="View0">
+                                <rect key="frame" x="0.0" y="103" width="393" height="160"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-4J-Tzi" userLabel="View1">
+                                        <rect key="frame" x="0.0" y="36" width="393" height="123"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile1" translatesAutoresizingMaskIntoConstraints="NO" id="loL-ll-vGZ">
+                                                <rect key="frame" x="146" y="8" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="l30-lB-Cyu"/>
+                                                    <constraint firstAttribute="width" constant="100" id="qZM-6z-hL3"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="123" id="Ker-5Q-70g"/>
+                                            <constraint firstAttribute="width" constant="393" id="TxD-n1-gRS"/>
+                                            <constraint firstItem="loL-ll-vGZ" firstAttribute="top" secondItem="ogK-4J-Tzi" secondAttribute="top" constant="8" id="fi7-M3-13k"/>
+                                            <constraint firstItem="loL-ll-vGZ" firstAttribute="leading" secondItem="ogK-4J-Tzi" secondAttribute="leading" constant="146" id="mMT-mc-7dh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstItem="ogK-4J-Tzi" firstAttribute="top" secondItem="NZG-hy-MWy" secondAttribute="top" constant="36" id="OzD-qY-xaQ"/>
+                                    <constraint firstAttribute="width" constant="393" id="YJ7-TM-rFf"/>
+                                    <constraint firstAttribute="height" constant="160" id="Zwf-Uq-nsa"/>
+                                    <constraint firstItem="ogK-4J-Tzi" firstAttribute="leading" secondItem="NZG-hy-MWy" secondAttribute="leading" id="pIm-fy-pdw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-ls-D8i">
+                                <rect key="frame" x="61" y="718" width="270" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemCyanColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Me apadrinhe!"/>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9cC-ob-ef9">
-                                <rect key="frame" x="0.0" y="265" width="393" height="435"/>
+                                <rect key="frame" x="0.0" y="288" width="393" height="435"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -210,53 +248,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZG-hy-MWy" userLabel="View0">
-                                <rect key="frame" x="0.0" y="103" width="393" height="137"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-4J-Tzi" userLabel="View1">
-                                        <rect key="frame" x="0.0" y="36" width="393" height="123"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile1" translatesAutoresizingMaskIntoConstraints="NO" id="loL-ll-vGZ">
-                                                <rect key="frame" x="145" y="8" width="102" height="102"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="102" id="3Fy-tB-v6S"/>
-                                                    <constraint firstAttribute="width" constant="102" id="lHT-cp-4Yd"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="393" id="4Ce-97-QSV"/>
-                                            <constraint firstAttribute="bottom" secondItem="loL-ll-vGZ" secondAttribute="bottom" constant="13" id="F2B-Of-n66"/>
-                                            <constraint firstAttribute="height" constant="123" id="b7i-uf-0Fe"/>
-                                            <constraint firstItem="loL-ll-vGZ" firstAttribute="leading" secondItem="ogK-4J-Tzi" secondAttribute="leading" constant="145" id="kOc-w3-AQ9"/>
-                                            <constraint firstItem="loL-ll-vGZ" firstAttribute="top" secondItem="ogK-4J-Tzi" secondAttribute="top" constant="8" id="qHq-Mm-eg4"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemCyanColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="393" id="5no-om-6xn"/>
-                                    <constraint firstItem="ogK-4J-Tzi" firstAttribute="leading" secondItem="NZG-hy-MWy" secondAttribute="leading" id="65w-j3-it5"/>
-                                    <constraint firstItem="ogK-4J-Tzi" firstAttribute="top" secondItem="NZG-hy-MWy" secondAttribute="top" constant="36" id="V5a-Lu-nsD"/>
-                                    <constraint firstAttribute="height" constant="137" id="eKx-5C-BjT"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-ls-D8i">
-                                <rect key="frame" x="61" y="718" width="270" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemCyanColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Me apadrinhe!"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="57y-yS-d9Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NZG-hy-MWy" firstAttribute="leading" secondItem="57y-yS-d9Q" secondAttribute="leading" id="8V4-1r-Mgo"/>
-                            <constraint firstItem="NZG-hy-MWy" firstAttribute="top" secondItem="57y-yS-d9Q" secondAttribute="top" id="AOd-wU-R0H"/>
-                            <constraint firstItem="9cC-ob-ef9" firstAttribute="top" secondItem="NZG-hy-MWy" secondAttribute="bottom" constant="25" id="TJb-R1-bxA"/>
-                            <constraint firstItem="9cC-ob-ef9" firstAttribute="leading" secondItem="57y-yS-d9Q" secondAttribute="leading" id="eTb-1f-2CG"/>
+                            <constraint firstItem="NZG-hy-MWy" firstAttribute="top" secondItem="57y-yS-d9Q" secondAttribute="top" id="iOQ-B2-MT9"/>
+                            <constraint firstItem="NZG-hy-MWy" firstAttribute="leading" secondItem="57y-yS-d9Q" secondAttribute="leading" id="zZU-Dy-8FP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="Gpk-WV-D6W"/>

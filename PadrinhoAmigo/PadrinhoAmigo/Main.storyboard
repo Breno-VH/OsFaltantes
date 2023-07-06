@@ -132,27 +132,12 @@
                     <navigationItem key="navigationItem" title="Comunidade" id="v7Z-Dk-hcf"/>
                     <connections>
                         <outlet property="personList" destination="oio-Pg-NOS" id="21K-fx-Nwk"/>
+                        <segue destination="2k1-z6-rTx" kind="show" id="NHC-wi-9uy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bu-ih-XcD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968.7022900763359" y="-1028.1690140845071"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8gE-Pl-wbv">
-            <objects>
-                <viewController id="q7b-Rn-YV0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qmQ-XE-cYu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="UMJ-H7-hIw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9hD-K4-Xwo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Hp-na-eyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2936.6412213740455" y="-294.36619718309862"/>
+            <point key="canvasLocation" x="2969" y="-1028"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="E5n-VJ-gyN">
@@ -184,14 +169,92 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="q7b-Rn-YV0" kind="relationship" relationship="rootViewController" id="lig-wy-f9a"/>
+                        <segue destination="2k1-z6-rTx" kind="relationship" relationship="rootViewController" id="z5c-OX-Hou"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSJ-Ca-Uzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2009.9236641221373" y="-294.36619718309862"/>
         </scene>
+        <!--Perfil-->
+        <scene sceneID="RcL-va-OwG">
+            <objects>
+                <viewController id="2k1-z6-rTx" customClass="PerfilController" customModule="PadrinhoAmigo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQQ-jU-sI7">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9cC-ob-ef9">
+                                <rect key="frame" x="0.0" y="256" width="393" height="444"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="uZN-HI-Em5">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZN-HI-Em5" id="SNy-JC-vWU">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Engenharia elétrica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmn-jg-Xla">
+                                                    <rect key="frame" x="237" y="11" width="146" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZG-hy-MWy" userLabel="View0">
+                                <rect key="frame" x="0.0" y="103" width="393" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-4J-Tzi" userLabel="View1">
+                                        <rect key="frame" x="0.0" y="36" width="393" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile1" translatesAutoresizingMaskIntoConstraints="NO" id="loL-ll-vGZ">
+                                                <rect key="frame" x="130" y="-18" width="133" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-ls-D8i">
+                                <rect key="frame" x="61" y="718" width="270" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemCyanColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Me apadrinhe!"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="57y-yS-d9Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="Gpk-WV-D6W"/>
+                    <navigationItem key="navigationItem" title="Perfil" id="Ufx-iv-6Ga">
+                        <barButtonItem key="backBarButtonItem" title="Comunidade" id="rdb-WE-dea"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="BackgroundView" destination="NZG-hy-MWy" id="2xF-L8-kQM"/>
+                        <outlet property="ForegroundView" destination="ogK-4J-Tzi" id="4yd-Hq-SWb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvN-aU-gxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2969" y="-294"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NHC-wi-9uy"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Profile1" width="68" height="68"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
@@ -201,6 +264,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

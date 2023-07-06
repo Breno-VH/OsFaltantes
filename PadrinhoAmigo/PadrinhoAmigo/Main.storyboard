@@ -12,12 +12,15 @@
         <!--Comunidade-->
         <scene sceneID="MOD-Jr-bGM">
             <objects>
-                <navigationController id="USi-Nm-EPy" sceneMemberID="viewController">
+                <navigationController hidesBarsOnSwipe="YES" id="USi-Nm-EPy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Comunidade" image="person.3.fill" catalog="system" selectedImage="person.3.fill" id="0XW-bC-4ho"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yxU-ge-ANs">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="M4n-Gm-ccv">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="c7N-nj-PJW" kind="relationship" relationship="rootViewController" id="BZ0-3T-j4d"/>
                     </connections>
@@ -89,6 +92,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" systemColor="labelColor"/>
                                             <constraints>
                                                 <constraint firstItem="JjD-bv-7QX" firstAttribute="top" secondItem="8cn-Nf-QmZ" secondAttribute="topMargin" constant="39" id="0Rr-LR-1hc"/>
                                                 <constraint firstItem="EgB-gc-DZq" firstAttribute="leading" secondItem="uCn-yS-r2R" secondAttribute="trailing" constant="24" id="BDU-b2-ftz"/>
@@ -118,7 +123,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ocp-bH-By7"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="95W-ed-r24"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="top" secondItem="Ocp-bH-By7" secondAttribute="top" constant="17" id="x1f-Qm-MQb"/>
@@ -156,7 +161,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xzI-gI-JLU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="USi-Nm-EPy" kind="relationship" relationship="viewControllers" id="IB7-L6-0SM"/>
@@ -191,6 +196,9 @@
         <image name="Profile1" width="68" height="68"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

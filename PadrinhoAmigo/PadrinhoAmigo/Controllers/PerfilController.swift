@@ -27,6 +27,10 @@ class PerfilController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageProfile.layer.masksToBounds = false
+        imageProfile.layer.borderColor = UIColor.black.cgColor
+        imageProfile.layer.cornerRadius = imageProfile.frame.height/2
+        imageProfile.clipsToBounds = true
         imageProfile.image = displayUser?.img
         perfilInfo.delegate = self
         perfilInfo.dataSource = self

@@ -21,8 +21,9 @@ class PerfilController: UIViewController {
         
           let alert = UIAlertController(title: "", message: "Você tem certeza que quer ser apadrinhado por \(nomeUsuario)?", preferredStyle: UIAlertController.Style.alert)
           // add the actions (buttons)
-          alert.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: nil))
-          alert.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.cancel, handler: nil))
+          
+        alert.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: nil))
           // show the alert
           self.present(alert, animated: true, completion: nil)
         }

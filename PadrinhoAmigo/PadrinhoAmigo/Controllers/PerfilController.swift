@@ -14,6 +14,7 @@ class PerfilController: UIViewController {
     @IBOutlet weak var ForegroundView: UIView!
     @IBOutlet weak var BackgroundView: UIView!
     @IBOutlet weak var ButtonMeApadrinhe: UIButton!
+    @IBOutlet weak var buttonLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBAction func showAlert() {
           // create the alert
@@ -57,9 +58,10 @@ class PerfilController: UIViewController {
         ForegroundView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
-    @objc func buttonTapped() {
-        ButtonMeApadrinhe.backgroundColor =
-            .systemGray
+    @IBAction func buttonPressed(_ sender: Any) {
+        ButtonMeApadrinhe.configuration?.background.backgroundColor = .systemGray
+        ButtonMeApadrinhe.configuration?.cornerStyle = .capsule
+        buttonLabel.text = "Solicitação enviada"
     }
 }
 

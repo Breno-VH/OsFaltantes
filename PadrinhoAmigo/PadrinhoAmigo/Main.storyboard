@@ -188,12 +188,22 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2k1-z6-rTx" kind="relationship" relationship="rootViewController" id="z5c-OX-Hou"/>
+                        <segue destination="vPP-0q-b79" kind="relationship" relationship="rootViewController" id="6s7-OZ-24i"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSJ-Ca-Uzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2009.9236641221373" y="-294.36619718309862"/>
+        </scene>
+        <!--RegistrarPerfil-->
+        <scene sceneID="rFU-Og-xG1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RegistrarPerfil" id="vPP-0q-b79" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="174-mu-wJA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BfT-7K-LZw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2996" y="-351"/>
         </scene>
         <!-- -->
         <scene sceneID="RcL-va-OwG">
@@ -332,12 +342,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvN-aU-gxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968.7022900763359" y="-294.36619718309862"/>
+            <point key="canvasLocation" x="3891" y="-1028"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="NHC-wi-9uy"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Profile1" width="68" height="68"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>

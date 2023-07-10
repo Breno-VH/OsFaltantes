@@ -20,13 +20,11 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var interests: UILabel!
     
     func show(user: User){
-        
-        //name.text = user.getName(n: i)
+
         name.text = user.name
         img.image = user.img
-        img.layer.borderWidth = 1
+        //img.layer.borderWidth = 1
         img.layer.masksToBounds = false
-        img.layer.borderColor = UIColor.black.cgColor
         img.layer.cornerRadius = img.frame.height/2
         img.clipsToBounds = true
         course.text = user.course

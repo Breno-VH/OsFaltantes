@@ -357,7 +357,7 @@
 				CODE_SIGN_ENTITLEMENTS = PadrinhoAmigo/PadrinhoAmigo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 73XDZPPBTH;
+				DEVELOPMENT_TEAM = FH5247AW32;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PadrinhoAmigo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

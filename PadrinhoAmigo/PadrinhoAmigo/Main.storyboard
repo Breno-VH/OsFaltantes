@@ -120,11 +120,19 @@
                                     <segment title="Veteranos"/>
                                 </segments>
                             </segmentedControl>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nFE-z4-mv6">
+                                <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5v9-3A-IoL"/>
+                                    <constraint firstAttribute="height" constant="100" id="64O-bI-w9V"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ocp-bH-By7"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="top" secondItem="L0c-v9-5rQ" secondAttribute="bottom" constant="8" id="1Sz-vQ-y8j"/>
+                            <constraint firstItem="nFE-z4-mv6" firstAttribute="centerX" secondItem="BDU-Mc-mIz" secondAttribute="centerX" id="3cG-Eu-nGI"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="95W-ed-r24"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="DdO-zq-l69"/>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="16" id="HiN-Gb-9Aj"/>
@@ -132,6 +140,7 @@
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="P0H-oi-ezH"/>
                             <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="25" id="XOt-NV-MTL"/>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="bottom" secondItem="Ocp-bH-By7" secondAttribute="bottom" id="dWN-ui-p5v"/>
+                            <constraint firstItem="nFE-z4-mv6" firstAttribute="centerY" secondItem="BDU-Mc-mIz" secondAttribute="centerY" id="gXn-nn-hb6"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="top" secondItem="Ocp-bH-By7" secondAttribute="top" constant="17" id="x1f-Qm-MQb"/>
                             <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="25" id="zTN-i9-uWy"/>
                         </constraints>
@@ -139,6 +148,7 @@
                     <navigationItem key="navigationItem" title="Comunidade" id="v7Z-Dk-hcf"/>
                     <connections>
                         <outlet property="personList" destination="oio-Pg-NOS" id="21K-fx-Nwk"/>
+                        <outlet property="spinner" destination="nFE-z4-mv6" id="hUB-44-wvR"/>
                         <segue destination="2k1-z6-rTx" kind="show" id="NHC-wi-9uy"/>
                     </connections>
                 </viewController>
@@ -191,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZG-hy-MWy" userLabel="View0">
-                                <rect key="frame" x="0.0" y="155" width="393" height="160"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="256"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-4J-Tzi" userLabel="View1">
                                         <rect key="frame" x="0.0" y="36" width="393" height="123"/>

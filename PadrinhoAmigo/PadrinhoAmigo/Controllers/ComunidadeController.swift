@@ -11,11 +11,17 @@ import CloudKit
 class ComunidadeController: UIViewController {
     
     @IBOutlet var personList: UITableView!
-    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     private let manager = CloudKitManager()
+    let loadingTextLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        spinner.startAnimating()
+        
+    
+        
         personList.dataSource = self
         personList.delegate = self
         personList.layer.cornerRadius = 14
@@ -31,7 +37,7 @@ class ComunidadeController: UIViewController {
     func set(records: [CKRecord]) {
         self.records = records
         self.users = records.compactMap({User(record: $0)})
-        
+        spinner.isHidden = true
         self.personList.reloadData()
     }
     

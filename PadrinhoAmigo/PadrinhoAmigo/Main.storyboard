@@ -49,8 +49,8 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Castro " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgB-gc-DZq">
-                                                    <rect key="frame" x="108.00000000000001" y="17" width="143.33333333333337" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <rect key="frame" x="108" y="17" width="146" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -62,14 +62,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engenharia Elétrica" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owm-oc-3H9">
-                                                    <rect key="frame" x="108" y="49" width="154" height="21.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <rect key="frame" x="108.00000000000001" y="49" width="139.33333333333337" height="19.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empresa júnior - Entidades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXR-dm-LW5">
-                                                    <rect key="frame" x="107.99999999999999" y="84.666666666666671" width="152.66666666666663" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="107.99999999999999" y="82.333333333333329" width="150.66666666666663" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -85,7 +85,6 @@
                                             <constraints>
                                                 <constraint firstItem="JjD-bv-7QX" firstAttribute="top" secondItem="8cn-Nf-QmZ" secondAttribute="topMargin" constant="39" id="0Rr-LR-1hc"/>
                                                 <constraint firstItem="EgB-gc-DZq" firstAttribute="leading" secondItem="uCn-yS-r2R" secondAttribute="trailing" constant="24" id="BDU-b2-ftz"/>
-                                                <constraint firstItem="JjD-bv-7QX" firstAttribute="leading" secondItem="Owm-oc-3H9" secondAttribute="trailing" constant="50" id="C7f-eR-s72"/>
                                                 <constraint firstItem="Owm-oc-3H9" firstAttribute="top" secondItem="EgB-gc-DZq" secondAttribute="bottom" constant="8" id="GV6-r1-Zdw"/>
                                                 <constraint firstItem="uCn-yS-r2R" firstAttribute="leading" secondItem="8cn-Nf-QmZ" secondAttribute="leading" constant="16" id="TWO-g7-wvQ"/>
                                                 <constraint firstItem="JjD-bv-7QX" firstAttribute="trailing" secondItem="8cn-Nf-QmZ" secondAttribute="trailingMargin" id="U1e-bN-FwK"/>

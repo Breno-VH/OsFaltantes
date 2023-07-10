@@ -18,6 +18,7 @@ class ComunidadeController: UIViewController {
         super.viewDidLoad()
         personList.dataSource = self
         personList.delegate = self
+        personList.layer.cornerRadius = 14
         
         Task {
             await fetchRecords()
@@ -74,13 +75,6 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
-        
-        cell.layer.cornerRadius = 8
-        cell.layer.masksToBounds = false
-        cell.layer.shadowOffset = CGSizeMake(0, 0)
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.23
-        cell.layer.shadowRadius = 4
         
         cell.show(user: users[indexPath.row])
         

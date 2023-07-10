@@ -8,6 +8,7 @@
 import UIKit
 class PerfilController: UIViewController {
     
+    
     var displayUser: User?
     @IBOutlet weak var perfilInfo: UITableView!
     @IBOutlet weak var ForegroundView: UIView!
@@ -16,6 +17,7 @@ class PerfilController: UIViewController {
     @IBOutlet weak var imageProfile: UIImageView!
     @IBAction func showAlert() {
           // create the alert
+    
         
         let nomeUsuario = displayUser?.name ?? "esse usuário"
         
@@ -48,10 +50,16 @@ class PerfilController: UIViewController {
         perfilInfo.delegate = self
         perfilInfo.dataSource = self
         ButtonMeApadrinhe.configuration?.cornerStyle = .capsule
+        
         BackgroundView.clipsToBounds = true
         ForegroundView.clipsToBounds = true
         ForegroundView.layer.cornerRadius = 30
         ForegroundView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    @objc func buttonTapped() {
+        ButtonMeApadrinhe.backgroundColor =
+            .systemGray
     }
 }
 

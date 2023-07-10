@@ -37,20 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-v9-5rQ">
-                                <rect key="frame" x="25" y="172" width="343" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="ObP-7g-n6u"/>
-                                    <constraint firstAttribute="height" constant="31" id="fev-xf-L1p"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Calouros"/>
-                                    <segment title="Veteranos"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oio-Pg-NOS">
-                                <rect key="frame" x="16" y="211" width="361" height="641"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oio-Pg-NOS">
+                                <rect key="frame" x="16" y="159" width="361" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="person1" rowHeight="128" id="6XJ-Tm-qMj" customClass="UserCell" customModule="PadrinhoAmigo" customModuleProvider="target">
@@ -121,12 +109,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-v9-5rQ">
+                                <rect key="frame" x="0.0" y="168" width="393" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="ObP-7g-n6u"/>
+                                    <constraint firstAttribute="height" constant="31" id="fev-xf-L1p"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Calouros"/>
+                                    <segment title="Veteranos"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ocp-bH-By7"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="oio-Pg-NOS" firstAttribute="top" secondItem="L0c-v9-5rQ" secondAttribute="bottom" constant="8" id="1Sz-vQ-y8j"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="95W-ed-r24"/>
+                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="DdO-zq-l69"/>
+                            <constraint firstItem="oio-Pg-NOS" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="16" id="HiN-Gb-9Aj"/>
+                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="oio-Pg-NOS" secondAttribute="trailing" constant="16" id="Lo8-Sl-eNA"/>
+                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="P0H-oi-ezH"/>
+                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="25" id="XOt-NV-MTL"/>
+                            <constraint firstItem="oio-Pg-NOS" firstAttribute="bottom" secondItem="Ocp-bH-By7" secondAttribute="bottom" id="dWN-ui-p5v"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="top" secondItem="Ocp-bH-By7" secondAttribute="top" constant="17" id="x1f-Qm-MQb"/>
+                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="25" id="zTN-i9-uWy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comunidade" id="v7Z-Dk-hcf"/>
@@ -137,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bu-ih-XcD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2969" y="-1028"/>
+            <point key="canvasLocation" x="2968.7022900763359" y="-1028.1690140845071"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="E5n-VJ-gyN">
@@ -208,18 +215,19 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="KPc-gK-yIg"/>
                                     <constraint firstItem="ogK-4J-Tzi" firstAttribute="top" secondItem="NZG-hy-MWy" secondAttribute="top" constant="36" id="OzD-qY-xaQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="393" id="UAX-tB-6Cr"/>
                                     <constraint firstAttribute="width" constant="393" id="YJ7-TM-rFf"/>
                                     <constraint firstAttribute="height" constant="160" id="Zwf-Uq-nsa"/>
                                     <constraint firstItem="ogK-4J-Tzi" firstAttribute="leading" secondItem="NZG-hy-MWy" secondAttribute="leading" id="pIm-fy-pdw"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-ls-D8i">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-ls-D8i">
                                 <rect key="frame" x="61" y="718" width="270" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Me apadrinhe!"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Solicitação enviada"/>
                                 <connections>
                                     <action selector="showAlert" destination="2k1-z6-rTx" eventType="touchUpInside" id="ZaM-SB-WK6"/>
                                 </connections>
@@ -232,7 +240,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="uZN-HI-Em5" customClass="PerfilCell" customModule="PadrinhoAmigo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZN-HI-Em5" translatesAutoresizingMaskIntoConstraints="NO" id="SNy-JC-vWU">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uZN-HI-Em5" id="SNy-JC-vWU">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -255,7 +263,15 @@
                         <viewLayoutGuide key="safeArea" id="57y-yS-d9Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wvl-ls-D8i" firstAttribute="leading" secondItem="aQQ-jU-sI7" secondAttribute="leadingMargin" constant="45" id="2Ql-Z7-Xbo"/>
+                            <constraint firstItem="NZG-hy-MWy" firstAttribute="leading" secondItem="57y-yS-d9Q" secondAttribute="leading" id="6GB-td-nYY"/>
+                            <constraint firstItem="wvl-ls-D8i" firstAttribute="top" secondItem="9cC-ob-ef9" secondAttribute="bottom" constant="17" id="EBl-Y3-r8H"/>
+                            <constraint firstItem="NZG-hy-MWy" firstAttribute="trailing" secondItem="57y-yS-d9Q" secondAttribute="trailing" id="Fca-zT-SVw"/>
+                            <constraint firstItem="wvl-ls-D8i" firstAttribute="top" secondItem="NZG-hy-MWy" secondAttribute="bottom" constant="403" id="O8S-k8-afE"/>
+                            <constraint firstItem="NZG-hy-MWy" firstAttribute="top" secondItem="57y-yS-d9Q" secondAttribute="top" id="WQg-fX-cKK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wvl-ls-D8i" secondAttribute="trailing" constant="46" id="eaq-XA-luw"/>
                             <constraint firstItem="NZG-hy-MWy" firstAttribute="top" secondItem="57y-yS-d9Q" secondAttribute="top" id="iOQ-B2-MT9"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="wvl-ls-D8i" secondAttribute="bottom" constant="16" id="iaB-cg-L3R"/>
                             <constraint firstItem="NZG-hy-MWy" firstAttribute="leading" secondItem="57y-yS-d9Q" secondAttribute="leading" id="zZU-Dy-8FP"/>
                         </constraints>
                     </view>
@@ -274,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvN-aU-gxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2968.7022900763359" y="-294.36619718309862"/>
+            <point key="canvasLocation" x="2969" y="-294"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

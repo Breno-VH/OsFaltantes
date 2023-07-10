@@ -16,9 +16,9 @@ class PerfilCell: UITableViewCell {
             user?.course!,
             user?.formatYear(),
             user?.origin!,
-            user?.formatEntities(),
-            user?.formatInterests(),
-            user?.formatExperiencies(),
+            user?.format(array: user?.entities, sep: ", "),
+            user?.format(array: user?.interests, sep: ", "),
+            user?.format(array: user?.experience, sep: ", "),
             user?.description!
         ]
         rightLabel.text = info[i]

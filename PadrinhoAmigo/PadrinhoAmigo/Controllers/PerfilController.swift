@@ -16,6 +16,7 @@ class PerfilController: UIViewController {
     @IBOutlet weak var ButtonMeApadrinhe: UIButton!
     @IBOutlet weak var buttonLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var infoLabel: UILabel!
     @IBAction func showAlert() {
           // create the alert
     
@@ -72,7 +73,7 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        39
+        74
     }
     
     func tableView(_ tableView: UITableView, widthForRowAt indexPath: IndexPath) -> CGFloat {
@@ -84,6 +85,8 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
         
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         cell.textLabel?.text = categories[indexPath.row]
+        infoLabel.numberOfLines = 3;
+        infoLabel.lineBreakMode = .byWordWrapping
         cell.infoPersons(user: displayUser, i: indexPath.row)
         return cell
     }

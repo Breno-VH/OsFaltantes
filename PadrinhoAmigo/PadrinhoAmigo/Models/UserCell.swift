@@ -31,7 +31,7 @@ class UserCell: UITableViewCell {
         img.clipsToBounds = true
         course.text = user.course
         year.text = user.formatYear()
-        interests.text = user.formatInterests()
+        interests.text = user.format(array: user.interests, sep: " R- ")
     }
     
 }

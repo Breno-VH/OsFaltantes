@@ -52,7 +52,7 @@ class PerfilController: UIViewController {
         perfilInfo.delegate = self
         perfilInfo.dataSource = self
         ButtonMeApadrinhe.configuration?.cornerStyle = .capsule
-        
+        ButtonMeApadrinhe.configuration?.background.backgroundColor = .systemCyan
         BackgroundView.clipsToBounds = true
         ForegroundView.clipsToBounds = true
         ForegroundView.layer.cornerRadius = 30

@@ -13,7 +13,9 @@
         <scene sceneID="MOD-Jr-bGM">
             <objects>
                 <navigationController id="USi-Nm-EPy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Comunidade" image="person.3.fill" catalog="system" selectedImage="person.3.fill" id="0XW-bC-4ho"/>
+                    <tabBarItem key="tabBarItem" title="Comunidade" image="person.3.fill" catalog="system" selectedImage="person.3.fill" id="0XW-bC-4ho">
+                        <color key="badgeColor" systemColor="systemCyanColor"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yxU-ge-ANs">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -163,6 +165,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" systemColor="systemCyanColor"/>
+                        <color key="selectedImageTintColor" systemColor="systemCyanColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="USi-Nm-EPy" kind="relationship" relationship="viewControllers" id="IB7-L6-0SM"/>

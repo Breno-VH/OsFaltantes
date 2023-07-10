@@ -17,6 +17,8 @@ class PerfilController: UIViewController {
     @IBOutlet weak var buttonLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var pronounsLabel: UILabel!
     @IBAction func showAlert() {
           // create the alert
     
@@ -49,6 +51,8 @@ class PerfilController: UIViewController {
         imageProfile.layer.cornerRadius = imageProfile.frame.height/2
         imageProfile.clipsToBounds = true
         imageProfile.image = displayUser?.img
+        nameLabel.text = displayUser?.name
+        pronounsLabel.text = displayUser?.pronouns
         perfilInfo.delegate = self
         perfilInfo.dataSource = self
         ButtonMeApadrinhe.configuration?.cornerStyle = .capsule

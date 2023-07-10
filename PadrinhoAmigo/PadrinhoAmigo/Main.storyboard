@@ -207,7 +207,7 @@
                                 <rect key="frame" x="0.0" y="155" width="393" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-4J-Tzi" userLabel="View1">
-                                        <rect key="frame" x="0.0" y="36" width="393" height="123"/>
+                                        <rect key="frame" x="0.0" y="36" width="393" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile1" translatesAutoresizingMaskIntoConstraints="NO" id="loL-ll-vGZ">
                                                 <rect key="frame" x="146" y="8" width="100" height="100"/>
@@ -219,7 +219,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="123" id="Ker-5Q-70g"/>
+                                            <constraint firstAttribute="height" constant="150" id="Ker-5Q-70g"/>
                                             <constraint firstAttribute="width" constant="393" id="TxD-n1-gRS"/>
                                             <constraint firstItem="loL-ll-vGZ" firstAttribute="top" secondItem="ogK-4J-Tzi" secondAttribute="top" constant="8" id="fi7-M3-13k"/>
                                             <constraint firstItem="loL-ll-vGZ" firstAttribute="leading" secondItem="ogK-4J-Tzi" secondAttribute="leading" constant="146" id="mMT-mc-7dh"/>
@@ -250,8 +250,29 @@
                                     <action selector="showAlert" destination="2k1-z6-rTx" eventType="touchUpInside" id="ZaM-SB-WK6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Me apadrinhe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE7-P8-jhO">
+                                <rect key="frame" x="47" y="719" width="300" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gustavo Castro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lq9-ag-kC8">
+                                <rect key="frame" x="16" y="305" width="361" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ele/dele" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMi-Bc-ASv">
+                                <rect key="frame" x="16" y="323" width="361" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9cC-ob-ef9">
-                                <rect key="frame" x="0.0" y="305" width="393" height="397"/>
+                                <rect key="frame" x="0.0" y="346" width="393" height="356"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -277,13 +298,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Me apadrinhe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE7-P8-jhO">
-                                <rect key="frame" x="47" y="719" width="300" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="57y-yS-d9Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -297,7 +311,9 @@
                             <constraint firstItem="NZG-hy-MWy" firstAttribute="leading" secondItem="57y-yS-d9Q" secondAttribute="leading" id="zZU-Dy-8FP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="Gpk-WV-D6W"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="Gpk-WV-D6W">
+                        <color key="badgeColor" systemColor="systemCyanColor"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title=" " id="Ufx-iv-6Ga">
                         <barButtonItem key="backBarButtonItem" id="rdb-WE-dea"/>
                     </navigationItem>
@@ -309,7 +325,9 @@
                         <outlet property="buttonLabel" destination="sE7-P8-jhO" id="JTL-7z-CHz"/>
                         <outlet property="imageProfile" destination="loL-ll-vGZ" id="MHw-C9-EDo"/>
                         <outlet property="infoLabel" destination="sE7-P8-jhO" id="1Fg-aU-Dag"/>
+                        <outlet property="nameLabel" destination="Lq9-ag-kC8" id="Fl8-FC-Ekz"/>
                         <outlet property="perfilInfo" destination="9cC-ob-ef9" id="nJW-ed-6om"/>
+                        <outlet property="pronounsLabel" destination="VMi-Bc-ASv" id="Izz-ei-Gn8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvN-aU-gxt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

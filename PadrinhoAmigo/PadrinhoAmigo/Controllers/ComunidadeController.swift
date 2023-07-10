@@ -11,13 +11,20 @@ import CloudKit
 class ComunidadeController: UIViewController {
     
     @IBOutlet var personList: UITableView!
-    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     private let manager = CloudKitManager()
+    let loadingTextLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        spinner.startAnimating()
+        
+    
+        
         personList.dataSource = self
         personList.delegate = self
+        personList.layer.cornerRadius = 14
         
         Task {
             await fetchRecords()
@@ -30,7 +37,7 @@ class ComunidadeController: UIViewController {
     func set(records: [CKRecord]) {
         self.records = records
         self.users = records.compactMap({User(record: $0)})
-        
+        spinner.isHidden = true
         self.personList.reloadData()
     }
     
@@ -74,13 +81,6 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
-        
-        cell.layer.cornerRadius = 8
-        cell.layer.masksToBounds = false
-        cell.layer.shadowOffset = CGSizeMake(0, 0)
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.23
-        cell.layer.shadowRadius = 4
         
         cell.show(user: users[indexPath.row])
         

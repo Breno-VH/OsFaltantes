@@ -12,7 +12,7 @@
         <!--Comunidade-->
         <scene sceneID="MOD-Jr-bGM">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="USi-Nm-EPy" sceneMemberID="viewController">
+                <navigationController id="USi-Nm-EPy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Comunidade" image="person.3.fill" catalog="system" selectedImage="person.3.fill" id="0XW-bC-4ho"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yxU-ge-ANs">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -201,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZG-hy-MWy" userLabel="View0">
-                                <rect key="frame" x="0.0" y="59" width="393" height="256"/>
+                                <rect key="frame" x="0.0" y="155" width="393" height="177"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-4J-Tzi" userLabel="View1">
                                         <rect key="frame" x="0.0" y="36" width="393" height="123"/>
@@ -234,7 +234,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-ls-D8i">
-                                <rect key="frame" x="61" y="718" width="270" height="35"/>
+                                <rect key="frame" x="61" y="735" width="270" height="18"/>
                                 <color key="tintColor" systemColor="systemCyanColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Solicitação enviada"/>
@@ -243,7 +243,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9cC-ob-ef9">
-                                <rect key="frame" x="0.0" y="288" width="393" height="413"/>
+                                <rect key="frame" x="0.0" y="305" width="393" height="413"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>

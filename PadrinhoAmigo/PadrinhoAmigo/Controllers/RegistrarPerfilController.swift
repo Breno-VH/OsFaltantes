@@ -23,8 +23,15 @@ class RegistrarPerfilController: UIViewController {
     
     @IBOutlet weak var ConfirmarSenhaTextField: UITextField!
     
+    @IBOutlet weak var addInteresseTextField: UITextField!
+    
+    @IBOutlet weak var interesseButtonLabel: UILabel!
     
     @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var buttonInteresse: UIButton!
+    
+    
     
     let categories = [
     "Pronome",
@@ -48,11 +55,11 @@ class RegistrarPerfilController: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
-        if let user = fillUser() {
+        //if let user = fillUser() {
             let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
             navigationController?.pushViewController(vc, animated: false)
-        }
+        //}
     }
     
     @IBAction func ProxButton(_ sender: Any) {
@@ -62,10 +69,18 @@ class RegistrarPerfilController: UIViewController {
     }
     
     @IBAction func plusButton(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "interesse") as! RegistrarPerfilController
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     @IBAction func salvarButton(_ sender: Any) {
+    }
+    
+    @IBAction func addButton(_ sender: Any) {
+        addInteresseTextField.isHidden = true
+        //buttonInteresse.titleLabel?.text = addInteresseTextField.text
+        interesseButtonLabel.text = addInteresseTextField.text
     }
     
     func saveUser(user: User) async {

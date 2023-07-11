@@ -18,31 +18,6 @@ class LoginController: UIViewController {
         
       }
     
-    func saveUser(user: User) async {
-        manager.save(user: user)
-        
-    }
-
-}
-
-
-extension LoginController {
     
-    func validateEmail(email: String) -> Bool {
-        do {
-            let pattern = "[a-z]{1}[0-9]{6}@dac.unicamp.br"
-            let academicEmailRegex = try NSRegularExpression(pattern: pattern)
-            let range = NSRange(location: 0, length: email.count)
-            
-            if academicEmailRegex.firstMatch(in: email, range: range) != nil {
-                return true
-            }
-            
-        } catch let error {
-            print(error.localizedDescription)
-            return false
-        }
-        return false
-    }
-
 }
+

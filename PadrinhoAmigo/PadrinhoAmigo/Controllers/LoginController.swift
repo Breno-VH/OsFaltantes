@@ -32,7 +32,19 @@ class LoginController: UIViewController {
         
       }
     
-    @IBAction func Login1Button(_ sender: Any) {
+    @IBAction func Login1Button(_ sender: Any)  {
+        Task {
+            do {
+                if let user = try await attemptLogin(email: emailTextField.text!, password: senhaTextField.text!) {
+                    print(user.name)
+                } else {
+                    print("usuário não encontrado")
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
     }
     
     @IBAction func registreseButton(_ sender: Any) {
@@ -46,7 +58,6 @@ class LoginController: UIViewController {
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
         navigationController?.pushViewController(vc, animated: false)
-        print("issooo")
     }
     
 }
@@ -70,5 +81,14 @@ extension LoginController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+    
+    func attemptLogin(email: String, password: String) async throws -> User? {
+        if let record = try await manager.fetchUser(email: email, password: password) {
+            let user = User(record: record)
+            return user
+        } else {
+            return nil
+        }
+    }
 }
 

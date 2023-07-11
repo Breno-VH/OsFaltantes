@@ -37,6 +37,15 @@ struct CloudKitManager {
     return records
   }
     
+    func fetchUser(email: String, password: String) async throws -> CKRecord? {
+        let pred = NSPredicate(format: "email == %@ AND senha == %@", email, password)
+        let query = CKQuery(recordType: recordType, predicate: pred)
+        let result = try await publicDatabase.records(matching: query)
+        let records = try result.matchResults.map({ try $0.1.get() })
+        return records.first
+    }
+    
+    
     func save(user: User)  {
         let record = CKRecord(recordType: recordType)
         record.setValuesForKeys(["ano": user.year!, "curso": user.course!,

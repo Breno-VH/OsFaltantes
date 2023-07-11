@@ -24,6 +24,17 @@ class LoginController: UIViewController {
       }
     
     @IBAction func Login1Button(_ sender: Any) {
+        Task {
+            do {
+                if let user = try await attemptLogin(email: emailTextField.text!, password: senhaTextField.text!) {
+                    print(user.name)
+                } else {
+                    print("usuário não encontrado")
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
     
     @IBAction func registreseButton(_ sender: Any) {

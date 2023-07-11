@@ -44,16 +44,15 @@ class RegistrarPerfilController: UIViewController {
         registrarTable?.layer.cornerRadius = 14
       }
     
-    func saveUser(user: User) async {
-        manager.save(user: user)
-        
-    }
+    
     
     
     @IBAction func loginButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
-        navigationController?.pushViewController(vc, animated: false)
+        if let user = fillUser() {
+            let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
+            navigationController?.pushViewController(vc, animated: false)
+        }
     }
     
     @IBAction func ProxButton(_ sender: Any) {
@@ -67,6 +66,25 @@ class RegistrarPerfilController: UIViewController {
     }
     
     @IBAction func salvarButton(_ sender: Any) {
+    }
+    
+    func saveUser(user: User) async {
+        manager.save(user: user)
+        
+    }
+    
+    func fillUser() -> User? {
+        
+        if SenhaTextField.text! != ConfirmarSenhaTextField.text! {
+            print("senhas não são iguais")
+            return nil
+        } else if !validateEmail(email: emailTextField.text!) {
+            print("formato invalido de email")
+            return nil
+        }
+        var registeredUser = User(email: emailTextField.text!, password: SenhaTextField.text!, name: nameTextField.text!)
+        
+        return registeredUser
     }
     
 }

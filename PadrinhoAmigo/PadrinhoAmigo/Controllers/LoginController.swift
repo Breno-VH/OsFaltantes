@@ -24,6 +24,17 @@ class LoginController: UIViewController {
       }
     
     @IBAction func Login1Button(_ sender: Any) {
+        Task {
+            do {
+                if let user = try await attemptLogin(email: emailTextField.text!, password: senhaTextField.text!) {
+                    print(user.name)
+                } else {
+                    print("usuário não encontrado")
+                }
+            } catch {
+                print(error)
+            }
+        }
     }
     
     @IBAction func registreseButton(_ sender: Any) {
@@ -33,6 +44,14 @@ class LoginController: UIViewController {
         //self.present(vc, animated: true)
     }
     
+    
+    func attemptLogin(email: String, password: String) async throws -> User? {
+        if let record = try await manager.fetchUser(email: email, password: password) {
+            let user = User(record: record)
+            return user
+        } else {
+            return nil
+        }
+    }
 }
-
 

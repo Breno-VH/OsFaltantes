@@ -42,7 +42,7 @@ struct CloudKitManager {
         record.setValuesForKeys(["ano": user.year!, "curso": user.course!,
                                  "entidades": user.entities ?? [], "descricao": user.description ?? "",
                                  "experiencia": user.experience ?? [], "interesses": user.interests ?? [],
-                                 "name": user.name, "origem": user.origin!, "pronomes": user.pronouns!, "senha": user.password!])
+                                 "name": user.name, "origem": user.origin!, "pronomes": user.pronouns!, "senha": user.password!, "email": user.email!])
         
         
         publicDatabase.save(record) { newRecord, error in

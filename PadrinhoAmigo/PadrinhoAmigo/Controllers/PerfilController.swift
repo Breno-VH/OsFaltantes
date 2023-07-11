@@ -29,7 +29,13 @@ class PerfilController: UIViewController {
           // add the actions (buttons)
           
         alert.addAction(UIAlertAction(title: "Não", style: UIAlertAction.Style.destructive, handler: nil))
-        alert.addAction(UIAlertAction(title: "Sim", style: UIAlertAction.Style.default, handler: nil))
+        
+        alert.addAction(
+            UIAlertAction(title: "Sim", style: .default, handler: { _ in
+                self.didTapYesOption()
+            })
+        )
+        
           // show the alert
           self.present(alert, animated: true, completion: nil)
         }
@@ -43,6 +49,13 @@ class PerfilController: UIViewController {
     "Experiência",
     "Descrição"
     ]
+    
+    func didTapYesOption() {
+        ButtonMeApadrinhe.configuration?.background.backgroundColor = .systemGray
+        ButtonMeApadrinhe.configuration?.cornerStyle = .capsule
+        buttonLabel.text = "Solicitação enviada"
+        ButtonMeApadrinhe.isEnabled = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,9 +77,7 @@ class PerfilController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        ButtonMeApadrinhe.configuration?.background.backgroundColor = .systemGray
-        ButtonMeApadrinhe.configuration?.cornerStyle = .capsule
-        buttonLabel.text = "Solicitação enviada"
+       //
     }
 }
 

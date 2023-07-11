@@ -10,7 +10,9 @@ import CloudKit
 
 
 class RegistrarPerfilController: UIViewController {
+    
     private let manager = CloudKitManager()
+    
     @IBOutlet weak var registrarTable: UITableView!
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -20,6 +22,9 @@ class RegistrarPerfilController: UIViewController {
     @IBOutlet weak var SenhaTextField: UITextField!
     
     @IBOutlet weak var ConfirmarSenhaTextField: UITextField!
+    
+    
+    @IBOutlet weak var label: UILabel!
     
     let categories = [
     "Pronome",
@@ -34,8 +39,9 @@ class RegistrarPerfilController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        registrarTable?.delegate = self
+        registrarTable?.dataSource = self
+        registrarTable?.layer.cornerRadius = 14
       }
     
     func saveUser(user: User) async {
@@ -54,6 +60,10 @@ class RegistrarPerfilController: UIViewController {
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil3") as! RegistrarPerfilController
         navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func plusButton(_ sender: Any) {
+        
     }
     
     @IBAction func salvarButton(_ sender: Any) {
@@ -99,8 +109,8 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell: UITableViewCell = UITableViewCell()
-        let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LoginCell
-        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! LoginCell
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
         cell.textLabel?.text = categories[indexPath.row]
         return cell
     }

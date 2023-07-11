@@ -11,6 +11,26 @@ import CloudKit
 
 class RegistrarPerfilController: UIViewController {
     private let manager = CloudKitManager()
+    @IBOutlet weak var registrarTable: UITableView!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var SenhaTextField: UITextField!
+    
+    @IBOutlet weak var ConfirmarSenhaTextField: UITextField!
+    
+    let categories = [
+    "Pronome",
+    "Ano que entrou",
+    "Curso",
+    "Local de origem",
+    "Experiência",
+    "Interesses",
+    "Entidades",
+    "Descrição"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +42,23 @@ class RegistrarPerfilController: UIViewController {
         manager.save(user: user)
         
     }
-
+    
+    
+    @IBAction func loginButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func ProxButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil3") as! RegistrarPerfilController
+        navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    @IBAction func salvarButton(_ sender: Any) {
+    }
+    
 }
 
 
@@ -46,3 +82,28 @@ extension RegistrarPerfilController {
     }
 
 }
+
+extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        categories.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        44
+    }
+    
+    func tableView(_ tableView: UITableView, widthForRowAt indexPath: IndexPath) -> CGFloat {
+        361
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell: UITableViewCell = UITableViewCell()
+        let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LoginCell
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        cell.textLabel?.text = categories[indexPath.row]
+        return cell
+    }
+    
+}
+

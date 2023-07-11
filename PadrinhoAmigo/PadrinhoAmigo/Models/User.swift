@@ -35,6 +35,12 @@ class User {
         return false
     }
     
+    init(email: String, password: String, name: String) {
+        self.email = email
+        self.password = password
+        self.name = name
+    }
+    
     init(record: CKRecord) {
         self.record = record
         self.name = record["name"] as? String ?? ""

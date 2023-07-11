@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CloudKit
 
 
 class LoginController: UIViewController {
-    
+    private let manager = CloudKitManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,9 @@ class LoginController: UIViewController {
         
       }
     
-      
+    func saveUser(user: User) async {
+        manager.save(user: user)
+        
+    }
 
 }

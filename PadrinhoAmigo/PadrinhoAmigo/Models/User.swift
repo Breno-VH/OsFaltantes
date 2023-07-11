@@ -42,7 +42,7 @@ class User {
         self.interests = record["interesses"] as? [String] ?? []
         self.entities = record["entidades"] as? [String] ?? [""]
         self.experience = record["experiencia"] as? [String] ?? []
-        self.description = record["descrição"] as? String ?? ""
+        self.description = record["descricao"] as? String ?? ""
         self.pronouns = record["pronomes"] as? String ?? ""
         self.godParents = record["padrinhos"] as? [CKRecord] ?? []
         self.godChildren = record["afilhados"] as? [CKRecord] ?? []

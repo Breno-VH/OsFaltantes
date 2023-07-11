@@ -21,6 +21,7 @@
 		8B24E33B2A4C57DC00C60D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B24E33A2A4C57DC00C60D57 /* Assets.xcassets */; };
 		8B24E34C2A4DA8D700C60D57 /* ComunidadeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24E34B2A4DA8D700C60D57 /* ComunidadeController.swift */; };
 		8B24E34E2A4DAB0900C60D57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24E34D2A4DAB0900C60D57 /* User.swift */; };
+		8B860BC42A5D888000F91FE8 /* RegistrarPerfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B860BC32A5D888000F91FE8 /* RegistrarPerfilController.swift */; };
 		8BC9658D2A55AD9800433D21 /* ListCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC9658C2A55AD9800433D21 /* ListCourses.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		8B24E3452A4C64EE00C60D57 /* PadrinhoAmigo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PadrinhoAmigo.entitlements; sourceTree = "<group>"; };
 		8B24E34B2A4DA8D700C60D57 /* ComunidadeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComunidadeController.swift; sourceTree = "<group>"; };
 		8B24E34D2A4DAB0900C60D57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8B860BC32A5D888000F91FE8 /* RegistrarPerfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarPerfilController.swift; sourceTree = "<group>"; };
 		8BC9658C2A55AD9800433D21 /* ListCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCourses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				8B24E34B2A4DA8D700C60D57 /* ComunidadeController.swift */,
 				05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */,
 				8B1FE6122A5D73AF0076F876 /* LoginController.swift */,
+				8B860BC32A5D888000F91FE8 /* RegistrarPerfilController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				8B24E34C2A4DA8D700C60D57 /* ComunidadeController.swift in Sources */,
 				8B24E34E2A4DAB0900C60D57 /* User.swift in Sources */,
 				8B24E3342A4C57DB00C60D57 /* SceneDelegate.swift in Sources */,
+				8B860BC42A5D888000F91FE8 /* RegistrarPerfilController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

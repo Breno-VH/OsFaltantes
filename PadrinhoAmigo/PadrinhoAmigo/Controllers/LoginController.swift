@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CloudKit
 
 
 class LoginController: UIViewController {
+    private let manager = CloudKitManager()
     
     let categories = [
     "Pronome",
@@ -55,3 +57,4 @@ extension LoginController: UITableViewDataSource, UITableViewDelegate{
     }
     
 }
+

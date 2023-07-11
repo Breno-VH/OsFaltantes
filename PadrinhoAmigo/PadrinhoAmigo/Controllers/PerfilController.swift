@@ -77,7 +77,10 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        74
+        if indexPath.row == 6{
+           return 100
+        }
+        return 74
     }
     
     func tableView(_ tableView: UITableView, widthForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,7 +89,6 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PerfilCell = perfilInfo.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PerfilCell
-        
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         cell.textLabel?.text = categories[indexPath.row]
         infoLabel.numberOfLines = 3;

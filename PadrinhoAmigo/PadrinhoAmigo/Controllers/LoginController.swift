@@ -12,6 +12,10 @@ import CloudKit
 class LoginController: UIViewController {
     private let manager = CloudKitManager()
     
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var senhaTextField: UITextField!
+    
     let categories = [
     "Pronome",
     "Ano que entrou",
@@ -28,6 +32,9 @@ class LoginController: UIViewController {
         
       }
     
+    @IBAction func Login1Button(_ sender: Any) {
+    }
+    
     @IBAction func registreseButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil1") as! RegistrarPerfilController
@@ -35,7 +42,13 @@ class LoginController: UIViewController {
         //self.present(vc, animated: true)
     }
     
-
+    @IBAction func loginButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
+        navigationController?.pushViewController(vc, animated: false)
+        print("issooo")
+    }
+    
 }
 
 extension LoginController: UITableViewDataSource, UITableViewDelegate{

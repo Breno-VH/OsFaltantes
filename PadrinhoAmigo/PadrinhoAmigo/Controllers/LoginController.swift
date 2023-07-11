@@ -26,14 +26,14 @@ class LoginController: UIViewController {
     @IBAction func Login1Button(_ sender: Any) {
         Task {
             do {
-                //if let user = try await attemptLogin(email: emailTextField.text!, password: senhaTextField.text!) {
+                if let user = try await attemptLogin(email: emailTextField.text!, password: senhaTextField.text!) {
                     let storyboard = UIStoryboard(name: "Perfil", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "Profile") as! PerfilPessoalController
                     navigationController?.pushViewController(vc, animated: false)
-                    //print(user.name)
-                //} else {
-                    //print("usuário não encontrado")
-               // }
+                    print(user.name)
+                } else {
+                    print("usuário não encontrado")
+                }
             } catch {
                 print(error)
             }

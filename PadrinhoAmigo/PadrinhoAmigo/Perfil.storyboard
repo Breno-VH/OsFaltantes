@@ -106,6 +106,9 @@
                         <barButtonItem key="backBarButtonItem" id="hme-Vo-uvi"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="perfilTableview" destination="9eX-Nz-Nx8" id="Nl7-xQ-bvg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBZ-wY-abM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

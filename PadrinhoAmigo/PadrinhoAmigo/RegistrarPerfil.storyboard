@@ -209,11 +209,7 @@
                             <constraint firstItem="aUW-BZ-DQH" firstAttribute="leading" secondItem="aZS-gB-FsH" secondAttribute="leading" constant="16" id="jos-TL-wPU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" style="editor" id="yaI-kA-jbC">
-                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="EwJ-Eu-zMK">
-                            <color key="tintColor" systemColor="systemCyanColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" style="editor" id="yaI-kA-jbC"/>
                     <connections>
                         <outlet property="ConfirmarSenhaTextField" destination="fX3-ji-jsI" id="QyU-1H-5LU"/>
                         <outlet property="SenhaTextField" destination="r7I-rx-lXb" id="mCf-M7-CLg"/>

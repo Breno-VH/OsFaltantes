@@ -13,6 +13,7 @@
 		05AC75AD2A4EFBDC0069C198 /* RegistrarPerfil.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AC75AC2A4EFBDC0069C198 /* RegistrarPerfil.storyboard */; };
 		05AC75AF2A4EFC6D0069C198 /* PerfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */; };
 		05CBA5082A5D9BCF00BB144D /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBA5072A5D9BCF00BB144D /* LoginCell.swift */; };
+		05CBA50A2A5DF37B00BB144D /* PerfilPessoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CBA5092A5DF37B00BB144D /* PerfilPessoalController.swift */; };
 		05D6BB642A56FADC00426A2D /* PerfilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6BB632A56FADC00426A2D /* PerfilCell.swift */; };
 		05DEF2342A54F00F0039294E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DEF2332A54F00F0039294E /* Main.storyboard */; };
 		8B1FE6132A5D73AF0076F876 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1FE6122A5D73AF0076F876 /* LoginController.swift */; };
@@ -33,6 +34,7 @@
 		05AC75AC2A4EFBDC0069C198 /* RegistrarPerfil.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrarPerfil.storyboard; sourceTree = "<group>"; };
 		05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilController.swift; sourceTree = "<group>"; };
 		05CBA5072A5D9BCF00BB144D /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		05CBA5092A5DF37B00BB144D /* PerfilPessoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilPessoalController.swift; sourceTree = "<group>"; };
 		05D6BB632A56FADC00426A2D /* PerfilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilCell.swift; sourceTree = "<group>"; };
 		05DEF2332A54F00F0039294E /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8B1FE6122A5D73AF0076F876 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				8B24E3352A4C57DB00C60D57 /* ViewController.swift */,
 				8B24E34B2A4DA8D700C60D57 /* ComunidadeController.swift */,
 				05AC75AE2A4EFC6D0069C198 /* PerfilController.swift */,
+				05CBA5092A5DF37B00BB144D /* PerfilPessoalController.swift */,
 				8B1FE6122A5D73AF0076F876 /* LoginController.swift */,
 				8B860BC32A5D888000F91FE8 /* RegistrarPerfilController.swift */,
 			);
@@ -203,6 +206,7 @@
 				8B24E3362A4C57DB00C60D57 /* ViewController.swift in Sources */,
 				057F6C492A53436500C61249 /* CloudKitManager.swift in Sources */,
 				05D6BB642A56FADC00426A2D /* PerfilCell.swift in Sources */,
+				05CBA50A2A5DF37B00BB144D /* PerfilPessoalController.swift in Sources */,
 				05CBA5082A5D9BCF00BB144D /* LoginCell.swift in Sources */,
 				8B24E3322A4C57DB00C60D57 /* AppDelegate.swift in Sources */,
 				8BC9658D2A55AD9800433D21 /* ListCourses.swift in Sources */,

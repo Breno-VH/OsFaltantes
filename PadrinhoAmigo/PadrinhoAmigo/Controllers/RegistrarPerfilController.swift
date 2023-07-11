@@ -9,7 +9,7 @@ import UIKit
 import CloudKit
 
 
-class RegistrarController: UIViewController {
+class RegistrarPerfilController: UIViewController {
     private let manager = CloudKitManager()
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class RegistrarController: UIViewController {
 }
 
 
-extension RegistrarController {
+extension RegistrarPerfilController {
     
     func validateEmail(email: String) -> Bool {
         do {

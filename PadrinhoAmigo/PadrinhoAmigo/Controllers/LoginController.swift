@@ -30,8 +30,9 @@ class LoginController: UIViewController {
     
     @IBAction func registreseButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil1")
-        self.present(vc, animated: true)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil1") as! RegistrarPerfilController
+        navigationController?.pushViewController(vc, animated: false)
+        //self.present(vc, animated: true)
     }
     
 

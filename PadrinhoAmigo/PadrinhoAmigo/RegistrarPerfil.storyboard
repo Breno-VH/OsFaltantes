@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="562.59541984732823" y="-40.140845070422536"/>
         </scene>
-        <!--View Controller-->
+        <!--Registrar Perfil Controller-->
         <scene sceneID="HQb-LF-55C">
             <objects>
-                <viewController storyboardIdentifier="RegistrarPerfil1" id="d9j-8o-dhW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrarPerfil1" id="d9j-8o-dhW" customClass="RegistrarPerfilController" customModule="PadrinhoAmigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ouQ-fy-Ffp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

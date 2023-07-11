@@ -19,6 +19,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="yxU-ge-ANs">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="M4n-Gm-ccv">
                         <autoresizingMask key="autoresizingMask"/>
@@ -40,14 +41,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oio-Pg-NOS">
-                                <rect key="frame" x="16" y="159" width="361" height="610"/>
+                                <rect key="frame" x="0.0" y="150" width="393" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="person1" rowHeight="128" id="6XJ-Tm-qMj" customClass="UserCell" customModule="PadrinhoAmigo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="128"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6XJ-Tm-qMj" id="8cn-Nf-QmZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Castro " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgB-gc-DZq">
@@ -76,7 +77,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JjD-bv-7QX">
-                                                    <rect key="frame" x="312" y="50" width="29" height="19.333333333333329"/>
+                                                    <rect key="frame" x="344" y="50" width="29" height="19.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -110,10 +111,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-v9-5rQ">
-                                <rect key="frame" x="0.0" y="168" width="393" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-v9-5rQ">
+                                <rect key="frame" x="24" y="111" width="345" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="ObP-7g-n6u"/>
                                     <constraint firstAttribute="height" constant="31" id="fev-xf-L1p"/>
                                 </constraints>
                                 <segments>
@@ -134,16 +134,13 @@
                         <constraints>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="top" secondItem="L0c-v9-5rQ" secondAttribute="bottom" constant="8" id="1Sz-vQ-y8j"/>
                             <constraint firstItem="nFE-z4-mv6" firstAttribute="centerX" secondItem="BDU-Mc-mIz" secondAttribute="centerX" id="3cG-Eu-nGI"/>
-                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="95W-ed-r24"/>
-                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="DdO-zq-l69"/>
-                            <constraint firstItem="oio-Pg-NOS" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="16" id="HiN-Gb-9Aj"/>
-                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="oio-Pg-NOS" secondAttribute="trailing" constant="16" id="Lo8-Sl-eNA"/>
-                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="25" id="P0H-oi-ezH"/>
-                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="25" id="XOt-NV-MTL"/>
+                            <constraint firstItem="oio-Pg-NOS" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" id="NXv-Gl-m7z"/>
+                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="24" id="P0H-oi-ezH"/>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="bottom" secondItem="Ocp-bH-By7" secondAttribute="bottom" id="dWN-ui-p5v"/>
                             <constraint firstItem="nFE-z4-mv6" firstAttribute="centerY" secondItem="BDU-Mc-mIz" secondAttribute="centerY" id="gXn-nn-hb6"/>
-                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="top" secondItem="Ocp-bH-By7" secondAttribute="top" constant="17" id="x1f-Qm-MQb"/>
-                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="25" id="zTN-i9-uWy"/>
+                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="top" secondItem="Ocp-bH-By7" secondAttribute="top" constant="8" id="x1f-Qm-MQb"/>
+                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="oio-Pg-NOS" secondAttribute="trailing" id="zPH-c9-jmq"/>
+                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="24" id="zTN-i9-uWy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comunidade" id="v7Z-Dk-hcf"/>

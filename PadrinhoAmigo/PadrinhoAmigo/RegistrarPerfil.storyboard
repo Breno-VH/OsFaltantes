@@ -222,6 +222,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="20"/>
                                     <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButton:" destination="d9j-8o-dhW" eventType="touchUpInside" id="sqd-X3-m4O"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Ou se registre com -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQf-fE-1Bm">
                                 <rect key="frame" x="16" y="629" width="361" height="17"/>
@@ -255,10 +258,16 @@
                             <constraint firstItem="aUW-BZ-DQH" firstAttribute="leading" secondItem="aZS-gB-FsH" secondAttribute="leading" constant="16" id="jos-TL-wPU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yaI-kA-jbC">
-                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="EwJ-Eu-zMK"/>
+                    <navigationItem key="navigationItem" style="editor" id="yaI-kA-jbC">
+                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="EwJ-Eu-zMK">
+                            <color key="tintColor" systemColor="systemCyanColor"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ConfirmarSenhaTextField" destination="fX3-ji-jsI" id="QyU-1H-5LU"/>
+                        <outlet property="SenhaTextField" destination="r7I-rx-lXb" id="mCf-M7-CLg"/>
+                        <outlet property="emailTextField" destination="XJ2-5b-THc" id="oYD-k4-R4t"/>
+                        <outlet property="nameTextField" destination="aUW-BZ-DQH" id="P8Z-8g-39w"/>
                         <segue destination="L8q-2k-Rqs" kind="show" id="ibr-mj-bpS"/>
                     </connections>
                 </viewController>
@@ -282,7 +291,7 @@
                                     <constraint firstAttribute="height" constant="396" id="r3a-dK-wKY"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uM0-96-4JT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="uM0-96-4JT">
                                         <rect key="frame" x="0.0" y="50" width="361" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uM0-96-4JT" id="kws-Q8-GqY">
@@ -333,9 +342,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registrar Perfil" largeTitleDisplayMode="never" style="editor" id="UG7-wn-uGU">
-                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="PSY-Am-eWy"/>
+                        <barButtonItem key="rightBarButtonItem" title="Próximo" id="PSY-Am-eWy">
+                            <color key="tintColor" systemColor="systemCyanColor"/>
+                            <connections>
+                                <action selector="ProxButton:" destination="L8q-2k-Rqs" id="SEp-6v-sb6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="registrarTable" destination="SGL-d0-IW0" id="njM-Lh-bvp"/>
                         <segue destination="9d1-dh-pkZ" kind="show" id="Cqp-r7-WHj"/>
                     </connections>
                 </viewController>
@@ -346,7 +361,7 @@
         <!--Registrar Perfil-->
         <scene sceneID="mKK-sU-jxY">
             <objects>
-                <viewController id="9d1-dh-pkZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrarPerfil3" id="9d1-dh-pkZ" customClass="RegistrarPerfilController" customModule="PadrinhoAmigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SDT-E1-jpN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,7 +407,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Iniciação científica" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flX-nV-lIq">
@@ -402,7 +418,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Intercâmbio" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4t-E9-Byy">
@@ -439,7 +456,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Grupo de Estudos" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lhs-Mv-pTc">
@@ -458,7 +476,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
@@ -466,7 +485,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Registrar Perfil" largeTitleDisplayMode="never" style="editor" id="gnt-t1-B9S">
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="lTv-KM-Ota"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="lTv-KM-Ota">
+                            <color key="tintColor" systemColor="systemCyanColor"/>
+                            <connections>
+                                <action selector="salvarButton:" destination="9d1-dh-pkZ" id="OQl-c0-XEn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rR-Xm-x66" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

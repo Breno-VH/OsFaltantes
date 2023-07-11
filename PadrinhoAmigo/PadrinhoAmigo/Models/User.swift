@@ -24,6 +24,7 @@ class User {
     var record: CKRecord?
     var godParents: [CKRecord]?
     var godChildren: [CKRecord]?
+    var password: String?
     var isFreshmen: Bool {
         let currentYear = Calendar(identifier: .gregorian).dateComponents([.year], from: .now).year! % 2000
         

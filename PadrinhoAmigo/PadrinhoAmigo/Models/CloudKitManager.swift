@@ -41,8 +41,8 @@ struct CloudKitManager {
         let record = CKRecord(recordType: recordType)
         record.setValuesForKeys(["ano": user.year!, "curso": user.course!,
                                  "entidades": user.entities ?? [], "descricao": user.description ?? "",
-                                 "experiencia": user.experience!, "interesses": user.interests!,
-                                 "name": user.name, "origem": user.origin!, "pronomes": user.pronouns!])
+                                 "experiencia": user.experience ?? [], "interesses": user.interests ?? [],
+                                 "name": user.name, "origem": user.origin!, "pronomes": user.pronouns!, "senha": user.password!])
         
         
         publicDatabase.save(record) { newRecord, error in

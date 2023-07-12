@@ -51,19 +51,25 @@ struct CloudKitManager {
     
     
     func updateParentsList(godSon: User, godParent: User) {
-        let godSonId: CKRecord = godSon.record!
-        let godParentId: CKRecord = godParent.record!
+        let godSonRecord: CKRecord = godSon.record!
+        let godParentRecord: CKRecord = godParent.record!
         
         var listGodParents = godSon.godParents!
-        listGodParents.append(godParentId.recordID)
-        godSonId.setValue(listGodParents, forKey: "padrinhos")
+        listGodParents.append(godParentRecord.recordID)
         
+        let godParentsReferences = listGodParents.map({
+            CKRecord.Reference(recordID: $0, action: .none)
+        })
+        godSonRecord["padrinhos"] = godParentsReferences
         
         var listGodChildren = godParent.godChildren!
-        listGodChildren.append(godSonId.recordID)
-        godParentId.setValue(listGodChildren, forKey: "afilhados")
+        listGodChildren.append(godSonRecord.recordID)
+        let godChildrenReferences = listGodChildren.map({
+            CKRecord.Reference(recordID: $0, action: .none)
+        })
+        godParentRecord["afilhados"] = godChildrenReferences
         
-        publicDatabase.save(godSonId) { newRecord, error in
+        publicDatabase.save(godSonRecord) { newRecord, error in
             if let error = error {
                 print(error)
             } else {
@@ -73,7 +79,7 @@ struct CloudKitManager {
             }
         }
         
-        publicDatabase.save(godParentId) { newRecord, error in
+        publicDatabase.save(godParentRecord) { newRecord, error in
             if let error = error {
                 print(error)
             } else {

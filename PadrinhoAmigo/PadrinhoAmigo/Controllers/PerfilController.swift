@@ -11,7 +11,7 @@ class PerfilController: UIViewController {
     
     var manager = CloudKitManager()
     var displayUser: User?
-    var loggedUser: User?
+    var loggedUser = AppState.shared.loggedUser
     @IBOutlet weak var perfilInfo: UITableView!
     @IBOutlet weak var ForegroundView: UIView!
     @IBOutlet weak var BackgroundView: UIView!
@@ -114,7 +114,7 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
     
     
     func updateGodFather() {
-        print("vamos atualizar a relacao")
+        print("vamos atualizar a relacao de \(loggedUser?.name) e \(displayUser?.name)")
         var podeApadrinhar = true
         loggedUser?.godParents?.forEach({
             godParent in

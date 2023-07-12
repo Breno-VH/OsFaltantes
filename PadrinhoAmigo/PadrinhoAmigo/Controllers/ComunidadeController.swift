@@ -9,7 +9,7 @@ import UIKit
 import CloudKit
 
 class ComunidadeController: UIViewController {
-    var loggedUser: User?
+    var loggedUser = AppState.shared.loggedUser
     
     @IBOutlet var personList: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -100,13 +100,13 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           personList.deselectRow(at: indexPath, animated: true)
-           let user = users[indexPath.row]
-           
-           let storyboard = UIStoryboard(name: "Main", bundle: nil)
-           let vc = storyboard.instantiateViewController(withIdentifier: "PersonProfile") as! PerfilController
-             vc.displayUser = user
-           navigationController?.pushViewController(vc, animated: true)
+       personList.deselectRow(at: indexPath, animated: true)
+       let user = users[indexPath.row]
+       
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       let vc = storyboard.instantiateViewController(withIdentifier: "PersonProfile") as! PerfilController
+         vc.displayUser = user
+       navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

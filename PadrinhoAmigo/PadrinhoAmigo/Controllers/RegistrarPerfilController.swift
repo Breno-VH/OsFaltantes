@@ -31,10 +31,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var interesseButtonLabel: UILabel!
     
-    @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var buttonInteresse: UIButton!
-    
     
     
     let categories = [
@@ -47,6 +44,8 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     "Entidades",
     "Descrição"
     ]
+    
+    var info: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +88,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil3") as! RegistrarPerfilController
         navigationController?.pushViewController(vc, animated: false)
+        registrarTable.reloadData()
     }
     
     @IBAction func plusButton(_ sender: Any) {
@@ -98,6 +98,9 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func salvarButton(_ sender: Any) {
+        Task {
+            await saveUser(user: fillUser()!)
+        }
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -108,7 +111,6 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     func saveUser(user: User) async {
         manager.save(user: user)
-        
     }
     
     func fillUser() -> User? {
@@ -120,7 +122,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
             print("formato invalido de email")
             return nil
         }
-        var registeredUser = User(email: emailTextField.text!, password: SenhaTextField.text!, name: nameTextField.text!)
+        var registeredUser = User(email: emailTextField.text!, password: SenhaTextField.text!, name: nameTextField.text!, pronouns: info[0], year: info[1], course: info[2], origin: info[3], experience: info[4], interest: info[5], entities: info[6], description: info[7])
         
         return registeredUser
     }
@@ -168,6 +170,7 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate 
         let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! LoginCell
         cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
         cell.textLabel?.text = categories[indexPath.row]
+        info.append(cell.textFieldText())
         return cell
     }
     

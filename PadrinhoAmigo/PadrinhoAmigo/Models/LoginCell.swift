@@ -10,5 +10,10 @@ import UIKit
 
 class LoginCell: UITableViewCell {
     
+    @IBOutlet weak var textFieldPron: UITextField!
+    
+    func textFieldText() -> String {
+        return textFieldPron.text!
+    }
     
 }

@@ -35,10 +35,18 @@ class User {
         return false
     }
     
-    init(email: String, password: String, name: String) {
+    init(email: String, password: String, name: String, pronouns: String, year: String, course: String, origin: String, experience: String, interest: String, entities: String, description: String) {
         self.email = email
         self.password = password
         self.name = name
+        self.pronouns = pronouns
+        //self.year = year
+        self.course = course
+        self.origin = origin
+        //self.experience = experience
+        //self.interests = interest
+        //self.entities = entities
+        self.description = description
     }
     
     init(record: CKRecord) {

@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import CloudKit
 class PerfilController: UIViewController {
     
-    
+    var manager = CloudKitManager()
     var displayUser: User?
+    var loggedUser = AppState.shared.loggedUser
     @IBOutlet weak var perfilInfo: UITableView!
     @IBOutlet weak var ForegroundView: UIView!
     @IBOutlet weak var BackgroundView: UIView!
@@ -33,6 +35,8 @@ class PerfilController: UIViewController {
         alert.addAction(
             UIAlertAction(title: "Sim", style: .default, handler: { _ in
                 self.didTapYesOption()
+                self.updateGodFather()
+                
             })
         )
         
@@ -106,6 +110,23 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
         infoLabel.lineBreakMode = .byWordWrapping
         cell.infoPersons(user: displayUser, i: indexPath.row)
         return cell
+    }
+    
+    
+    func updateGodFather() {
+        print("vamos atualizar a relacao de \(loggedUser?.name) e \(displayUser?.name)")
+        var podeApadrinhar = true
+        loggedUser?.godParents?.forEach({
+            godParent in
+            if displayUser?.record?.recordID == godParent {
+                podeApadrinhar = false
+            }
+        })
+        
+        if podeApadrinhar {
+            manager.updateParentsList(godSon: loggedUser!, godParent: displayUser!)
+        }
+        
     }
     
 }

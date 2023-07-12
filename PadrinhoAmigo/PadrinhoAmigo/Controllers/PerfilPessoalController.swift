@@ -10,7 +10,7 @@ import UIKit
 
 class PerfilPessoalController: UIViewController {
     
-    var displayUser: User?
+    var displayUser = AppState.shared.loggedUser
     let categories = [
     "Curso",
     "Ano que entrou",

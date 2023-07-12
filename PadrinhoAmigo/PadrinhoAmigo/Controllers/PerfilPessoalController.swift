@@ -10,6 +10,7 @@ import UIKit
 
 class PerfilPessoalController: UIViewController {
     
+    var displayUser: User?
     let categories = [
     "Curso",
     "Ano que entrou",
@@ -53,7 +54,7 @@ extension PerfilPessoalController: UITableViewDataSource, UITableViewDelegate{
         cell.textLabel?.text = categories[indexPath.row]
         //infoLabel.numberOfLines = 3;
         //infoLabel.lineBreakMode = .byWordWrapping
-        //cell.infoPersons(user: displayUser, i: indexPath.row)
+        cell.infoPersons(user: displayUser, i: indexPath.row)
         return cell
     }
     

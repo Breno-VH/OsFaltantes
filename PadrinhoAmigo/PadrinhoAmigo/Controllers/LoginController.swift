@@ -29,6 +29,7 @@ class LoginController: UIViewController {
                 if let user = try await attemptLogin(email: emailTextField.text!, password: senhaTextField.text!) {
                     let storyboard = UIStoryboard(name: "Perfil", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "Profile") as! PerfilPessoalController
+                    vc.displayUser = user
                     navigationController?.pushViewController(vc, animated: false)
                     print(user.name)
                 } else {

@@ -9,9 +9,13 @@ import UIKit
 import CloudKit
 
 
-class RegistrarPerfilController: UIViewController {
+class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     private let manager = CloudKitManager()
+    
+    //var displayUser: User?
+    
+    @IBOutlet weak var ImagemPerfil: UIImageView!
     
     @IBOutlet weak var registrarTable: UITableView!
     
@@ -49,10 +53,29 @@ class RegistrarPerfilController: UIViewController {
         registrarTable?.delegate = self
         registrarTable?.dataSource = self
         registrarTable?.layer.cornerRadius = 14
+        
+        ImagemPerfil?.layer.masksToBounds = false
+        ImagemPerfil?.layer.borderColor = UIColor.black.cgColor
+        ImagemPerfil?.layer.cornerRadius = ImagemPerfil.frame.height/2
+        ImagemPerfil?.clipsToBounds = true
+        //ImagemPerfil?.image = displayUser?.img
+        
+        tapgasture()
       }
     
+    func tapgasture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapButton))
+        ImagemPerfil?.isUserInteractionEnabled = true
+        ImagemPerfil?.addGestureRecognizer(tap)
+    }
     
-    
+    @objc func didTapButton() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+
     
     @IBAction func loginButton(_ sender: Any) {
         //if let user = fillUser() {
@@ -126,7 +149,7 @@ extension RegistrarPerfilController {
 
 }
 
-extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate{
+extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         categories.count
@@ -146,6 +169,12 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate{
         cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
         cell.textLabel?.text = categories[indexPath.row]
         return cell
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        ImagemPerfil.image = info[.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
     }
     
 }

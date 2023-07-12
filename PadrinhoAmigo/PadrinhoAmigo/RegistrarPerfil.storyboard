@@ -253,7 +253,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Edit" translatesAutoresizingMaskIntoConstraints="NO" id="1VF-3e-RY1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagemPerfil" translatesAutoresizingMaskIntoConstraints="NO" id="1VF-3e-RY1">
                                 <rect key="frame" x="146" y="127" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="WXr-yv-Mgl"/>
@@ -292,6 +292,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ImagemPerfil" destination="1VF-3e-RY1" id="k5f-UL-4QZ"/>
                         <outlet property="registrarTable" destination="SGL-d0-IW0" id="njM-Lh-bvp"/>
                         <segue destination="9d1-dh-pkZ" kind="show" id="Cqp-r7-WHj"/>
                     </connections>
@@ -482,7 +483,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Aa8-SL-6oQ"/>
                                     <constraint firstAttribute="width" constant="313" id="uzp-tL-KK8"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -698,7 +699,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Edit" width="100" height="100"/>
+        <image name="ImagemPerfil" width="100" height="100"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

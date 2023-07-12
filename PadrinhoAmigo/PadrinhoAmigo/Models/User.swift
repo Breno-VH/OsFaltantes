@@ -27,9 +27,7 @@ class User {
     var email: String?
     var password: String?
     var isFreshmen: Bool {
-        let currentYear = Calendar(identifier: .gregorian).dateComponents([.year], from: .now).year! % 2000
-        
-        if year == currentYear {
+        if year == 23 {
             return true
         }
         return false
@@ -40,12 +38,12 @@ class User {
         self.password = password
         self.name = name
         self.pronouns = pronouns
-        //self.year = year
+        self.year = Int(year)
         self.course = course
         self.origin = origin
-        //self.experience = experience
-        //self.interests = interest
-        //self.entities = entities
+        self.experience = [experience]
+        self.interests = [interest]
+        self.entities = [entities]
         self.description = description
     }
     

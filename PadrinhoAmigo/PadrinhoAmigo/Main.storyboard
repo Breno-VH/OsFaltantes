@@ -112,7 +112,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-v9-5rQ">
-                                <rect key="frame" x="24" y="111" width="345" height="32"/>
+                                <rect key="frame" x="16" y="111" width="361" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="fev-xf-L1p"/>
                                 </constraints>
@@ -138,12 +138,12 @@
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="top" secondItem="L0c-v9-5rQ" secondAttribute="bottom" constant="8" id="1Sz-vQ-y8j"/>
                             <constraint firstItem="nFE-z4-mv6" firstAttribute="centerX" secondItem="BDU-Mc-mIz" secondAttribute="centerX" id="3cG-Eu-nGI"/>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" id="NXv-Gl-m7z"/>
-                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="24" id="P0H-oi-ezH"/>
+                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="16" id="P0H-oi-ezH"/>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="bottom" secondItem="Ocp-bH-By7" secondAttribute="bottom" id="dWN-ui-p5v"/>
                             <constraint firstItem="nFE-z4-mv6" firstAttribute="centerY" secondItem="BDU-Mc-mIz" secondAttribute="centerY" id="gXn-nn-hb6"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="top" secondItem="Ocp-bH-By7" secondAttribute="top" constant="8" id="x1f-Qm-MQb"/>
                             <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="oio-Pg-NOS" secondAttribute="trailing" id="zPH-c9-jmq"/>
-                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="24" id="zTN-i9-uWy"/>
+                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="16" id="zTN-i9-uWy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comunidade" id="v7Z-Dk-hcf"/>

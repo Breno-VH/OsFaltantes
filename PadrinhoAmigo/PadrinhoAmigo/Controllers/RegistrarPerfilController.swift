@@ -8,6 +8,7 @@
 import UIKit
 import CloudKit
 
+var user: User = User(email: "", password: "", name: "", pronouns: "", year: "", course: "", origin: "", experience: "", interest: "", entities: "", description: "")
 
 class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
@@ -45,8 +46,6 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     "Descrição"
     ]
     
-    var info: [String] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registrarTable?.delegate = self
@@ -78,9 +77,12 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func loginButton(_ sender: Any) {
         //if let user = fillUser() {
-            let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
-            navigationController?.pushViewController(vc, animated: false)
+        user.email = emailTextField.text!
+        user.password = SenhaTextField.text!
+        user.name = nameTextField.text!
+        let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
+        navigationController?.pushViewController(vc, animated: false)
         //}
     }
     
@@ -115,14 +117,14 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     func fillUser() -> User? {
         
-        if SenhaTextField.text! != ConfirmarSenhaTextField.text! {
+        /*if SenhaTextField.text! != ConfirmarSenhaTextField.text! {
             print("senhas não são iguais")
             return nil
         } else if !validateEmail(email: emailTextField.text!) {
             print("formato invalido de email")
             return nil
-        }
-        var registeredUser = User(email: emailTextField.text!, password: SenhaTextField.text!, name: nameTextField.text!, pronouns: info[0], year: info[1], course: info[2], origin: info[3], experience: info[4], interest: info[5], entities: info[6], description: info[7])
+        }*/
+        let registeredUser = user
         
         return registeredUser
     }
@@ -166,11 +168,10 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell: UITableViewCell = UITableViewCell()
-        let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! LoginCell
+        let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! LoginCell
         cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
         cell.textLabel?.text = categories[indexPath.row]
-        info.append(cell.textFieldText())
+        cell.textFieldText(i: indexPath.row, user: user)
         return cell
     }
     

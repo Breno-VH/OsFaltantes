@@ -83,12 +83,13 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //count()
-        if (showFreshmen == true){
+        /*if (showFreshmen == true){
             return numberOfFreshmen
         }
         else{
             return numberOfSeniors
-        }
+        }*/
+        users.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

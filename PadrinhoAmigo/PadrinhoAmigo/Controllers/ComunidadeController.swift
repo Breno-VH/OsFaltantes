@@ -17,6 +17,8 @@ class ComunidadeController: UIViewController {
     private var showFreshmen: Bool = true
     private var numberOfFreshmen: Int = 0
     private var numberOfSeniors: Int = 0
+    private var UsersFreshmen: [User] = []
+    private var UsersSenior: [User] = []
     private let manager = CloudKitManager()
     let loadingTextLabel = UILabel()
     
@@ -64,15 +66,21 @@ class ComunidadeController: UIViewController {
             showFreshmen = false
             personList.reloadData()
         }
+        else{
+            showFreshmen = true
+            personList.reloadData()
+        }
     }
     
     func count(){
         for user in users{
             if user.isFreshmen == true{
                 numberOfFreshmen += 1
+                UsersFreshmen.append(user)
             }
             else{
                 numberOfSeniors += 1
+                UsersSenior.append(user)
             }
         }
     }
@@ -82,14 +90,13 @@ class ComunidadeController: UIViewController {
 extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //count()
-        /*if (showFreshmen == true){
+        if (showFreshmen == true){
             return numberOfFreshmen
         }
         else{
             return numberOfSeniors
-        }*/
-        users.count
+        }
+        //users.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -112,7 +119,12 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
-        cell.show(user: users[indexPath.row])
+        if (showFreshmen == true){
+            cell.show(user: UsersFreshmen[indexPath.row])
+        }
+        else{
+            cell.show(user: UsersSenior[indexPath.row])
+        }
         return cell
     }
 }

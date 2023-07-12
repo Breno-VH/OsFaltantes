@@ -120,6 +120,9 @@
                                     <segment title="Calouros"/>
                                     <segment title="Veteranos"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChange:" destination="c7N-nj-PJW" eventType="valueChanged" id="Vk9-kr-sAv"/>
+                                </connections>
                             </segmentedControl>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nFE-z4-mv6">
                                 <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
@@ -146,6 +149,7 @@
                     <navigationItem key="navigationItem" title="Comunidade" id="v7Z-Dk-hcf"/>
                     <connections>
                         <outlet property="personList" destination="oio-Pg-NOS" id="21K-fx-Nwk"/>
+                        <outlet property="segmentedControl" destination="L0c-v9-5rQ" id="lJo-Uz-TmI"/>
                         <outlet property="spinner" destination="nFE-z4-mv6" id="hUB-44-wvR"/>
                         <segue destination="2k1-z6-rTx" kind="show" id="NHC-wi-9uy"/>
                     </connections>

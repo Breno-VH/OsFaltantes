@@ -12,6 +12,10 @@ class ComunidadeController: UIViewController {
     
     @IBOutlet var personList: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    private var showFreshmen: Bool = true
+    private var numberOfFreshmen: Int = 0
+    private var numberOfSeniors: Int = 0
     private let manager = CloudKitManager()
     let loadingTextLabel = UILabel()
     
@@ -38,6 +42,7 @@ class ComunidadeController: UIViewController {
         self.records = records
         self.users = records.compactMap({User(record: $0)})
         spinner.isHidden = true
+        count()
         self.personList.reloadData()
     }
     
@@ -46,19 +51,43 @@ class ComunidadeController: UIViewController {
       do {
         let records = try await manager.fetch()
         DispatchQueue.main.async {
-          self.set(records: records)
+            self.set(records: records)
         }
       } catch {
         print(error)
       }
     }
+    
+    @IBAction func segmentedControlChange(_ sender: Any) {
+        if (segmentedControl.selectedSegmentIndex == 1){
+            showFreshmen = false
+            personList.reloadData()
+        }
+    }
+    
+    func count(){
+        for user in users{
+            if user.isFreshmen == true{
+                numberOfFreshmen += 1
+            }
+            else{
+                numberOfSeniors += 1
+            }
+        }
+    }
+    
 }
 
 extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        records.count
+        //count()
+        if (showFreshmen == true){
+            return numberOfFreshmen
+        }
+        else{
+            return numberOfSeniors
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,12 +110,9 @@ extension ComunidadeController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UserCell = personList.dequeueReusableCell(withIdentifier: "person1", for: indexPath) as! UserCell
-        
         cell.show(user: users[indexPath.row])
-        
         return cell
     }
-    
 }
 
 

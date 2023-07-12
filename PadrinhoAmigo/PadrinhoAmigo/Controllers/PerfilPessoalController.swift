@@ -10,6 +10,7 @@ import UIKit
 
 class PerfilPessoalController: UIViewController {
     
+    var displayUser: User?
     let categories = [
     "Curso",
     "Ano que entrou",
@@ -21,11 +22,32 @@ class PerfilPessoalController: UIViewController {
     ]
     
     @IBOutlet weak var perfilTableview: UITableView!
+    
+    @IBOutlet weak var BackgroundView: UIView!
+    
+    @IBOutlet weak var ForegroundView: UIView!
+    
+    @IBOutlet weak var imageProfile: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var PronomeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         perfilTableview.delegate = self
         perfilTableview.dataSource = self
-        
+        BackgroundView.clipsToBounds = true
+        ForegroundView.clipsToBounds = true
+        ForegroundView.layer.cornerRadius = 30
+        ForegroundView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        imageProfile.layer.masksToBounds = false
+        imageProfile.layer.borderColor = UIColor.black.cgColor
+        imageProfile.layer.cornerRadius = imageProfile.frame.height/2
+        imageProfile.clipsToBounds = true
+        imageProfile.image = displayUser?.img
+        nameLabel.text = displayUser?.name
+        PronomeLabel.text = displayUser?.pronouns
       }
     
 }
@@ -48,12 +70,12 @@ extension PerfilPessoalController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PerfilCell = perfilTableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PerfilCell
+        let cell: PerfilPessoalCell = perfilTableview.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PerfilPessoalCell
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         cell.textLabel?.text = categories[indexPath.row]
         //infoLabel.numberOfLines = 3;
         //infoLabel.lineBreakMode = .byWordWrapping
-        //cell.infoPersons(user: displayUser, i: indexPath.row)
+        cell.infoPersons(user: displayUser, i: indexPath.row)
         return cell
     }
     

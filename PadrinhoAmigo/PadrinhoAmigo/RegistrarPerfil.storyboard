@@ -264,16 +264,13 @@
                                     <constraint firstAttribute="height" constant="100" id="zb1-IU-2iQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Castro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-NF-Cqd">
-                                <rect key="frame" x="116" y="251" width="160" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Castro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-NF-Cqd">
+                                <rect key="frame" x="0.0" y="251" width="393" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="519-BA-QcB"/>
+                                    <constraint firstAttribute="height" constant="29" id="V3a-Nb-cvL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="G C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfV-Oq-bM0">
-                                <rect key="frame" x="171" y="151" width="50" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -281,7 +278,7 @@
                         <viewLayoutGuide key="safeArea" id="faW-Ag-TET"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="fOj-NF-Cqd" firstAttribute="leading" secondItem="faW-Ag-TET" secondAttribute="leading" constant="116" id="5Ex-d6-LE3"/>
+                            <constraint firstItem="fOj-NF-Cqd" firstAttribute="leading" secondItem="faW-Ag-TET" secondAttribute="leading" id="5Ex-d6-LE3"/>
                             <constraint firstItem="1VF-3e-RY1" firstAttribute="leading" secondItem="faW-Ag-TET" secondAttribute="leading" constant="146" id="AZC-7Q-I5q"/>
                             <constraint firstItem="1VF-3e-RY1" firstAttribute="top" secondItem="faW-Ag-TET" secondAttribute="top" constant="24" id="uYt-HD-RIi"/>
                             <constraint firstItem="fOj-NF-Cqd" firstAttribute="top" secondItem="1VF-3e-RY1" secondAttribute="bottom" constant="24" id="zL6-nQ-6QZ"/>
@@ -297,6 +294,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ImagemPerfil" destination="1VF-3e-RY1" id="k5f-UL-4QZ"/>
+                        <outlet property="nameRegistrar" destination="fOj-NF-Cqd" id="qod-I0-ee2"/>
                         <outlet property="registrarTable" destination="SGL-d0-IW0" id="njM-Lh-bvp"/>
                         <segue destination="9d1-dh-pkZ" kind="show" id="Cqp-r7-WHj"/>
                     </connections>

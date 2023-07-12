@@ -14,7 +14,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     private let manager = CloudKitManager()
     
-    //var displayUser: User?
+    @IBOutlet weak var nameRegistrar: UILabel!
     
     @IBOutlet weak var ImagemPerfil: UIImageView!
     
@@ -51,7 +51,6 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         registrarTable?.delegate = self
         registrarTable?.dataSource = self
         registrarTable?.layer.cornerRadius = 14
-        
         ImagemPerfil?.layer.masksToBounds = false
         ImagemPerfil?.layer.borderColor = UIColor.black.cgColor
         ImagemPerfil?.layer.cornerRadius = ImagemPerfil.frame.height/2
@@ -76,14 +75,12 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
 
     
     @IBAction func loginButton(_ sender: Any) {
-        //if let user = fillUser() {
         user.email = emailTextField.text!
         user.password = SenhaTextField.text!
         user.name = nameTextField.text!
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
         navigationController?.pushViewController(vc, animated: false)
-        //}
     }
     
     @IBAction func ProxButton(_ sender: Any) {
@@ -156,7 +153,8 @@ extension RegistrarPerfilController {
 extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        categories.count
+        nameRegistrar.text = user.name
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -169,8 +167,6 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! LoginCell
-        //cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-        //cell.textLabel?.text = categories[indexPath.row]
         cell.textFieldPron.placeholder = categories[indexPath.row]
         cell.textFieldText(i: indexPath.row, user: user)
         return cell

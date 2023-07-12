@@ -169,8 +169,9 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! LoginCell
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-        cell.textLabel?.text = categories[indexPath.row]
+        //cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
+        //cell.textLabel?.text = categories[indexPath.row]
+        cell.textFieldPron.placeholder = categories[indexPath.row]
         cell.textFieldText(i: indexPath.row, user: user)
         return cell
     }

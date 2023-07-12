@@ -36,6 +36,55 @@ struct CloudKitManager {
     let records = try result.matchResults.map({ try $0.1.get() })
     return records
   }
+
+    func fetch(recordsId: [CKRecord.ID]) async throws-> [CKRecord] {
+        var records = [CKRecord]()
+        do {
+            let result = try await publicDatabase.records(for: recordsId, desiredKeys: nil)
+            records = try result.map({ try $0.value.get() })
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return records
+    }
+    
+    
+    func updateParentsList(godSon: User, godParent: User) {
+        let godSonId: CKRecord = godSon.record!
+        let godParentId: CKRecord = godParent.record!
+        
+        var listGodParents = godSon.godParents!
+        listGodParents.append(godParentId.recordID)
+        godSonId.setValue(listGodParents, forKey: "padrinhos")
+        
+        
+        var listGodChildren = godParent.godChildren!
+        listGodChildren.append(godSonId.recordID)
+        godParentId.setValue(listGodChildren, forKey: "afilhados")
+        
+        publicDatabase.save(godSonId) { newRecord, error in
+            if let error = error {
+                print(error)
+            } else {
+                if let _ = newRecord {
+                    print("SAVED")
+                }
+            }
+        }
+        
+        publicDatabase.save(godParentId) { newRecord, error in
+            if let error = error {
+                print(error)
+            } else {
+                if let _ = newRecord {
+                    print("SAVED")
+                }
+            }
+            
+        }
+        
+    }
     
     func fetchUser(email: String, password: String) async throws -> CKRecord? {
         let pred = NSPredicate(format: "email == %@ AND senha == %@", email, password)

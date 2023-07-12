@@ -9,6 +9,7 @@ import UIKit
 import CloudKit
 
 class ComunidadeController: UIViewController {
+    var loggedUser: User?
     
     @IBOutlet var personList: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!

@@ -22,8 +22,8 @@ class User {
     var description: String?
     var img: UIImage?
     var record: CKRecord?
-    var godParents: [CKRecord]?
-    var godChildren: [CKRecord]?
+    var godParents: [CKRecord.ID]?
+    var godChildren: [CKRecord.ID]?
     var email: String?
     var password: String?
     var isFreshmen: Bool {
@@ -52,8 +52,8 @@ class User {
         self.experience = record["experiencia"] as? [String] ?? []
         self.description = record["descricao"] as? String ?? ""
         self.pronouns = record["pronomes"] as? String ?? ""
-        self.godParents = record["padrinhos"] as? [CKRecord] ?? []
-        self.godChildren = record["afilhados"] as? [CKRecord] ?? []
+        self.godParents = record["padrinhos"] as? [CKRecord.ID] ?? []
+        self.godChildren = record["afilhados"] as? [CKRecord.ID] ?? []
         
         
         let imageAsset = record["imagem"] as? CKAsset

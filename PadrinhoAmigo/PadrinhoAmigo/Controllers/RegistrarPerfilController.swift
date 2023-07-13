@@ -55,6 +55,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         ImagemPerfil?.layer.borderColor = UIColor.black.cgColor
         ImagemPerfil?.layer.cornerRadius = ImagemPerfil.frame.height/2
         ImagemPerfil?.clipsToBounds = true
+        ConfirmarSenhaTextField.isSecureTextEntry = true
         //ImagemPerfil?.image = displayUser?.img
         
         tapgasture()

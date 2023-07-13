@@ -62,7 +62,6 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         "Curso",
         "Local de origem",
         "Experiência",
-        "Interesses",
         "Entidades",
         "Descrição"
     ]
@@ -129,6 +128,10 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         Task {
             await saveUser(user: fillUser()!)
         }
+        let storyboard = UIStoryboard(name: "Perfil", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Profile") as! PerfilPessoalController
+        AppState.shared.setUser(user: user)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -166,38 +169,45 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func ButtonEJ(_ sender: UIButton) {
+        user.interests! += ["Empresa Júnior"]
         ButtonPressedHighlight(sender, button: ButtonEJ)
         ButtonEJ.layer.cornerRadius = 8
     }
     
     @IBAction func ButtonIc(_ sender: UIButton) {
+        user.interests! += ["Iniciação científica"]
         ButtonPressedHighlight(sender, button: ButtonIc)
         ButtonIc.layer.cornerRadius = 8
     }
     
     @IBAction func ButtonTv(_ sender: UIButton) {
+        user.interests! += ["Trabalho Voluntário"]
         ButtonPressedHighlight(sender, button: ButtonTv)
         ButtonTv.layer.cornerRadius = 8
     }
     
     @IBAction func ButtonMs(_ sender: UIButton) {
+        user.interests! += ["Movimento Social"]
         ButtonPressedHighlight(sender, button: ButtonMs)
         ButtonMs.layer.cornerRadius = 8
     }
     
     
     @IBAction func ButtonIntercambio(_ sender: UIButton) {
+        user.interests! += ["Intercâmbio"]
         ButtonPressedHighlight(sender, button: ButtonIntercambio)
         ButtonIntercambio.layer.cornerRadius = 8
     }
     
     
     @IBAction func ButtonDancas(_ sender: UIButton) {
+        user.interests! += ["Danças"]
         ButtonPressedHighlight(sender, button: ButtonDancas)
         ButtonDancas.layer.cornerRadius = 8
     }
     
     @IBAction func ButtonRobotica(_ sender: UIButton) {
+        user.interests! += ["Robótica"]
         ButtonPressedHighlight(sender, button: ButtonRobotica)
         ButtonRobotica.layer.cornerRadius = 8
     }
@@ -205,12 +215,14 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
    
     
     @IBAction func ButtonEsportes(_ sender: UIButton) {
+        user.interests! += ["Esportes"]
         ButtonPressedHighlight(sender, button: ButtonEsportes)
         ButtonEsportes.layer.cornerRadius = 8
     }
     
     
     @IBAction func ButtonBateria(_ sender: UIButton) {
+        user.interests = ["Bateria"]
         ButtonPressedHighlight(sender, button: ButtonBateria)
         ButtonBateria.layer.cornerRadius = 8
     }
@@ -218,6 +230,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func ButtonGe(_ sender: UIButton) {
+        user.interests = ["Grupo de Estudos"]
         ButtonPressedHighlight(sender, button: ButtonGe)
         ButtonGe.layer.cornerRadius = 8
     }

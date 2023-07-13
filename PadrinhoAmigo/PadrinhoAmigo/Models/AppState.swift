@@ -9,7 +9,13 @@ import Foundation
 
 class AppState {
     static let shared = AppState()
+    private var loggedUser: User?
     private init() {}
     
-    var loggedUser: User?
+    func setUser(user: User){
+        loggedUser = user
+    }
+    func getUser() -> User?{
+        return loggedUser
+    }
 }

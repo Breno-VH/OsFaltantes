@@ -18,7 +18,7 @@ class LoginCell: UITableViewCell {
         case 0:
             user.pronouns = str
         case 1:
-            user.year = Int(str!)
+            user.year = 20
         case 2:
             user.course = str
         case 3:
@@ -26,10 +26,8 @@ class LoginCell: UITableViewCell {
         case 4:
             user.experience = [str!]
         case 5:
-            user.interests = [str!]
-        case 6:
             user.entities = [str!]
-        case 7:
+        case 6:
             user.description = str
         default:
             print("")

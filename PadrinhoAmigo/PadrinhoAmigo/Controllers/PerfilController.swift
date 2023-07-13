@@ -11,7 +11,7 @@ class PerfilController: UIViewController {
     
     var manager = CloudKitManager()
     var displayUser: User?
-    var loggedUser = AppState.shared.loggedUser
+    var loggedUser = AppState.shared.getUser()
     @IBOutlet weak var perfilInfo: UITableView!
     @IBOutlet weak var ForegroundView: UIView!
     @IBOutlet weak var BackgroundView: UIView!

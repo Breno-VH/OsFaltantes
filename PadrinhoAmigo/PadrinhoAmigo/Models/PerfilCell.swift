@@ -7,11 +7,14 @@
 
 import Foundation
 import UIKit
+import CloudKit
 
 class PerfilCell: UITableViewCell {
     
     @IBOutlet weak var rightLabel: UILabel!
     func infoPersons(user: User?, i: Int){
+        
+        
         let info = [
             user?.course!,
             user?.formatYear(),

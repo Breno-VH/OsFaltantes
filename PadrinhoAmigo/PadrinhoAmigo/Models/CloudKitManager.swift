@@ -36,6 +36,20 @@ struct CloudKitManager {
     let records = try result.matchResults.map({ try $0.1.get() })
     return records
   }
+    
+    func fetchUserNameGivenID(id: CKRecord.ID) async throws -> String? {
+        var name: String?
+        do {
+            var result =  try await publicDatabase.record(for: id)
+            name = result["name"] as? String
+            
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+        return name
+        
+    }
 
     func fetch(recordsId: [CKRecord.ID]) async throws-> [CKRecord] {
         var records = [CKRecord]()

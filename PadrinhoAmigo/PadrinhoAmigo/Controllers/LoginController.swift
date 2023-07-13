@@ -19,8 +19,7 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        senhaTextField.isSecureTextEntry = true
       }
     
     @IBAction func Login1Button(_ sender: Any) {

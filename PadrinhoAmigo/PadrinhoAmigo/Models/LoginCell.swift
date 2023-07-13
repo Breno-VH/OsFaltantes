@@ -18,7 +18,7 @@ class LoginCell: UITableViewCell {
         case 0:
             user.pronouns = str
         case 1:
-            user.year = 20
+            user.year = 20 //mudar depois
         case 2:
             user.course = str
         case 3:

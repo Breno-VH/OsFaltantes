@@ -283,6 +283,7 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         ImagemPerfil.image = info[.originalImage] as? UIImage
+        user.img = info[.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

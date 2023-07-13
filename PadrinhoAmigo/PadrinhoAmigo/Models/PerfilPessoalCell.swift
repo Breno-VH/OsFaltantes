@@ -1,20 +1,19 @@
 //
-//  PerfilCell.swift
+//  PerfilPessoalCell.swift
 //  PadrinhoAmigo
 //
-//  Created by Larissa Okabayashi on 06/07/23.
+//  Created by Larissa Okabayashi on 12/07/23.
 //
 
 import Foundation
 import UIKit
-import CloudKit
 
-class PerfilCell: UITableViewCell {
+class PerfilPessoalCell: UITableViewCell {
+    
     
     @IBOutlet weak var rightLabel: UILabel!
+    
     func infoPersons(user: User?, i: Int){
-        
-        
         let info = [
             user?.course!,
             user?.formatYear(),

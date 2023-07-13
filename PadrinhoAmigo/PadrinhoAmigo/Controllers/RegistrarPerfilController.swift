@@ -8,10 +8,15 @@
 import UIKit
 import CloudKit
 
+var user: User = User(email: "", password: "", name: "", pronouns: "", year: "", course: "", origin: "", experience: "", interest: "", entities: "", description: "")
 
-class RegistrarPerfilController: UIViewController {
+class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     private let manager = CloudKitManager()
+    
+    @IBOutlet weak var nameRegistrar: UILabel!
+    
+    @IBOutlet weak var ImagemPerfil: UIImageView!
     
     @IBOutlet weak var registrarTable: UITableView!
     
@@ -26,8 +31,6 @@ class RegistrarPerfilController: UIViewController {
     @IBOutlet weak var addInteresseTextField: UITextField!
     
     @IBOutlet weak var interesseButtonLabel: UILabel!
-    
-    @IBOutlet weak var label: UILabel!
     
     @IBOutlet weak var buttonInteresse: UIButton!
     
@@ -51,7 +54,6 @@ class RegistrarPerfilController: UIViewController {
     
     @IBOutlet weak var ButtonGe: UIButton!
     
-    
     let categories = [
         "Pronome",
         "Ano que entrou",
@@ -68,14 +70,34 @@ class RegistrarPerfilController: UIViewController {
         registrarTable?.delegate = self
         registrarTable?.dataSource = self
         registrarTable?.layer.cornerRadius = 14
+        ImagemPerfil?.layer.masksToBounds = false
+        ImagemPerfil?.layer.borderColor = UIColor.black.cgColor
+        ImagemPerfil?.layer.cornerRadius = ImagemPerfil.frame.height/2
+        ImagemPerfil?.clipsToBounds = true
+        ConfirmarSenhaTextField.isSecureTextEntry = true
+        //ImagemPerfil?.image = displayUser?.img
         
+        tapgasture()
+      }
+    
+    func tapgasture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapButton))
+        ImagemPerfil?.isUserInteractionEnabled = true
+        ImagemPerfil?.addGestureRecognizer(tap)
     }
     
-    
-    
+    @objc func didTapButton() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+
     
     @IBAction func loginButton(_ sender: Any) {
-        //if let user = fillUser() {
+        user.email = emailTextField.text!
+        user.password = SenhaTextField.text!
+        user.name = nameTextField.text!
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
         navigationController?.pushViewController(vc, animated: false)
@@ -86,6 +108,7 @@ class RegistrarPerfilController: UIViewController {
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil3") as! RegistrarPerfilController
         navigationController?.pushViewController(vc, animated: false)
+        registrarTable.reloadData()
     }
     
     @IBAction func plusButton(_ sender: Any) {
@@ -95,6 +118,9 @@ class RegistrarPerfilController: UIViewController {
     }
     
     @IBAction func salvarButton(_ sender: Any) {
+        Task {
+            await saveUser(user: fillUser()!)
+        }
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -105,19 +131,18 @@ class RegistrarPerfilController: UIViewController {
     
     func saveUser(user: User) async {
         manager.save(user: user)
-        
     }
     
     func fillUser() -> User? {
         
-        if SenhaTextField.text! != ConfirmarSenhaTextField.text! {
+        /*if SenhaTextField.text! != ConfirmarSenhaTextField.text! {
             print("senhas não são iguais")
             return nil
         } else if !validateEmail(email: emailTextField.text!) {
             print("formato invalido de email")
             return nil
-        }
-        var registeredUser = User(email: emailTextField.text!, password: SenhaTextField.text!, name: nameTextField.text!)
+        }*/
+        let registeredUser = user
         
         return registeredUser
     }
@@ -202,32 +227,38 @@ class RegistrarPerfilController: UIViewController {
             }
             return false
         }
-        
+        return false
     }
 
+}
+
+extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate {
     
-    extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate{
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            categories.count
-        }
-        
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            44
-        }
-        
-        func tableView(_ tableView: UITableView, widthForRowAt indexPath: IndexPath) -> CGFloat {
-            361
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            //let cell: UITableViewCell = UITableViewCell()
-            let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! LoginCell
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
-            cell.textLabel?.text = categories[indexPath.row]
-            return cell
-        }
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        nameRegistrar.text = user.name
+        return categories.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        44
+    }
+    
+    func tableView(_ tableView: UITableView, widthForRowAt indexPath: IndexPath) -> CGFloat {
+        361
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! LoginCell
+        cell.textFieldPron.placeholder = categories[indexPath.row]
+        cell.textFieldText(i: indexPath.row, user: user)
+        return cell
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        ImagemPerfil.image = info[.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
 

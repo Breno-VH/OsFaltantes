@@ -22,23 +22,29 @@ class User {
     var description: String?
     var img: UIImage?
     var record: CKRecord?
-    var godParents: [CKRecord]?
-    var godChildren: [CKRecord]?
+    var godParents: [CKRecord.ID]?
+    var godChildren: [CKRecord.ID]?
     var email: String?
     var password: String?
     var isFreshmen: Bool {
-        let currentYear = Calendar(identifier: .gregorian).dateComponents([.year], from: .now).year! % 2000
-        
-        if year == currentYear {
+        if year == 23 {
             return true
         }
         return false
     }
     
-    init(email: String, password: String, name: String) {
+    init(email: String, password: String, name: String, pronouns: String, year: String, course: String, origin: String, experience: String, interest: String, entities: String, description: String) {
         self.email = email
         self.password = password
         self.name = name
+        self.pronouns = pronouns
+        self.year = Int(year)
+        self.course = course
+        self.origin = origin
+        self.experience = [experience]
+        self.interests = [interest]
+        self.entities = [entities]
+        self.description = description
     }
     
     init(record: CKRecord) {
@@ -52,8 +58,8 @@ class User {
         self.experience = record["experiencia"] as? [String] ?? []
         self.description = record["descricao"] as? String ?? ""
         self.pronouns = record["pronomes"] as? String ?? ""
-        self.godParents = record["padrinhos"] as? [CKRecord] ?? []
-        self.godChildren = record["afilhados"] as? [CKRecord] ?? []
+        self.godParents = record["padrinhos"] as? [CKRecord.ID] ?? []
+        self.godChildren = record["afilhados"] as? [CKRecord.ID] ?? []
         
         
         let imageAsset = record["imagem"] as? CKAsset

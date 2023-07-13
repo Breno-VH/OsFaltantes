@@ -112,7 +112,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-v9-5rQ">
-                                <rect key="frame" x="24" y="111" width="345" height="32"/>
+                                <rect key="frame" x="16" y="111" width="361" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="fev-xf-L1p"/>
                                 </constraints>
@@ -120,6 +120,9 @@
                                     <segment title="Calouros"/>
                                     <segment title="Veteranos"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChange:" destination="c7N-nj-PJW" eventType="valueChanged" id="Vk9-kr-sAv"/>
+                                </connections>
                             </segmentedControl>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nFE-z4-mv6">
                                 <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
@@ -135,17 +138,18 @@
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="top" secondItem="L0c-v9-5rQ" secondAttribute="bottom" constant="8" id="1Sz-vQ-y8j"/>
                             <constraint firstItem="nFE-z4-mv6" firstAttribute="centerX" secondItem="BDU-Mc-mIz" secondAttribute="centerX" id="3cG-Eu-nGI"/>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" id="NXv-Gl-m7z"/>
-                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="24" id="P0H-oi-ezH"/>
+                            <constraint firstItem="L0c-v9-5rQ" firstAttribute="leading" secondItem="Ocp-bH-By7" secondAttribute="leading" constant="16" id="P0H-oi-ezH"/>
                             <constraint firstItem="oio-Pg-NOS" firstAttribute="bottom" secondItem="Ocp-bH-By7" secondAttribute="bottom" id="dWN-ui-p5v"/>
                             <constraint firstItem="nFE-z4-mv6" firstAttribute="centerY" secondItem="BDU-Mc-mIz" secondAttribute="centerY" id="gXn-nn-hb6"/>
                             <constraint firstItem="L0c-v9-5rQ" firstAttribute="top" secondItem="Ocp-bH-By7" secondAttribute="top" constant="8" id="x1f-Qm-MQb"/>
                             <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="oio-Pg-NOS" secondAttribute="trailing" id="zPH-c9-jmq"/>
-                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="24" id="zTN-i9-uWy"/>
+                            <constraint firstItem="Ocp-bH-By7" firstAttribute="trailing" secondItem="L0c-v9-5rQ" secondAttribute="trailing" constant="16" id="zTN-i9-uWy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comunidade" id="v7Z-Dk-hcf"/>
                     <connections>
                         <outlet property="personList" destination="oio-Pg-NOS" id="21K-fx-Nwk"/>
+                        <outlet property="segmentedControl" destination="L0c-v9-5rQ" id="lJo-Uz-TmI"/>
                         <outlet property="spinner" destination="nFE-z4-mv6" id="hUB-44-wvR"/>
                         <segue destination="2k1-z6-rTx" kind="show" id="NHC-wi-9uy"/>
                     </connections>
@@ -257,7 +261,7 @@
                                     <action selector="showAlert" destination="2k1-z6-rTx" eventType="touchUpInside" id="ZaM-SB-WK6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Me apadrinhe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE7-P8-jhO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quero ser apadrinhado!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sE7-P8-jhO">
                                 <rect key="frame" x="47" y="719" width="300" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>

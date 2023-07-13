@@ -36,8 +36,8 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var ButtonEJ: UIButton!
     
-    @IBOutlet weak var ButtonIC: UIButton!
-    
+    @IBOutlet weak var ButtonIc: UIButton!
+
     @IBOutlet weak var ButtonTv: UIButton!
     
     @IBOutlet weak var ButtonMs: UIButton!
@@ -46,6 +46,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var ButtonDancas: UIButton!
     
+    
     @IBOutlet weak var ButtonRobotica: UIButton!
     
     @IBOutlet weak var ButtonEsportes: UIButton!
@@ -53,6 +54,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var ButtonBateria: UIButton!
     
     @IBOutlet weak var ButtonGe: UIButton!
+    
     
     let categories = [
         "Pronome",
@@ -74,7 +76,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         ImagemPerfil?.layer.borderColor = UIColor.black.cgColor
         ImagemPerfil?.layer.cornerRadius = ImagemPerfil.frame.height/2
         ImagemPerfil?.clipsToBounds = true
-        ConfirmarSenhaTextField.isSecureTextEntry = true
+        //rConfirmarSenhaTextField.isSecureTextEntry = true
         //ImagemPerfil?.image = displayUser?.img
         
         tapgasture()
@@ -156,14 +158,15 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    @IBAction func ButtonEJPressed(_ sender: UIButton) {
+    
+    @IBAction func ButtonEJ(_ sender: UIButton) {
         ButtonPressedHighlight(sender, button: ButtonEJ)
         ButtonEJ.layer.cornerRadius = 8
     }
     
-    @IBAction func ButtonIC(_ sender: UIButton) {
-        ButtonPressedHighlight(sender, button: ButtonIC)
-        ButtonIC.layer.cornerRadius = 8
+    @IBAction func ButtonIc(_ sender: UIButton) {
+        ButtonPressedHighlight(sender, button: ButtonIc)
+        ButtonIc.layer.cornerRadius = 8
     }
     
     @IBAction func ButtonTv(_ sender: UIButton) {
@@ -176,10 +179,12 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         ButtonMs.layer.cornerRadius = 8
     }
     
+    
     @IBAction func ButtonIntercambio(_ sender: UIButton) {
         ButtonPressedHighlight(sender, button: ButtonIntercambio)
         ButtonIntercambio.layer.cornerRadius = 8
     }
+    
     
     @IBAction func ButtonDancas(_ sender: UIButton) {
         ButtonPressedHighlight(sender, button: ButtonDancas)
@@ -191,22 +196,26 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         ButtonRobotica.layer.cornerRadius = 8
     }
     
+   
+    
     @IBAction func ButtonEsportes(_ sender: UIButton) {
         ButtonPressedHighlight(sender, button: ButtonEsportes)
         ButtonEsportes.layer.cornerRadius = 8
     }
+    
     
     @IBAction func ButtonBateria(_ sender: UIButton) {
         ButtonPressedHighlight(sender, button: ButtonBateria)
         ButtonBateria.layer.cornerRadius = 8
     }
     
+    
+    
     @IBAction func ButtonGe(_ sender: UIButton) {
         ButtonPressedHighlight(sender, button: ButtonGe)
         ButtonGe.layer.cornerRadius = 8
     }
-    
-    
+        
 }
     
     extension RegistrarPerfilController {

@@ -129,9 +129,11 @@ extension User {
     func format(array: [String]?, sep: String) -> String{
         var formattedString: String = ""
         for i in array!{
-            formattedString += i
-            if (i != array![array!.count-1]){
-                formattedString += sep
+            if(i != ""){
+                formattedString += i
+                if (i != array![array!.count-1]){
+                    formattedString += sep
+                }
             }
         }
         return formattedString

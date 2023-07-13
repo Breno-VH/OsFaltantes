@@ -55,7 +55,6 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var ButtonGe: UIButton!
     
-    
     let categories = [
         "Pronome",
         "Ano que entrou",
@@ -105,6 +104,7 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         user.email = emailTextField.text!
         user.password = SenhaTextField.text!
         user.name = nameTextField.text!
+        AppState.shared.isLoginPressed.toggle()
         let storyboard = UIStoryboard(name: "RegistrarPerfil", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegistrarPerfil2") as! RegistrarPerfilController
         navigationController?.pushViewController(vc, animated: false)
@@ -276,7 +276,9 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LoginCell = registrarTable.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! LoginCell
         cell.textFieldPron.placeholder = categories[indexPath.row]
-        cell.textFieldText(i: indexPath.row, user: user)
+        if (AppState.shared.isLoginPressed){
+            cell.textFieldText(i: indexPath.row, user: user)
+        }
         return cell
     }
     

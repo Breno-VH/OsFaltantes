@@ -12,25 +12,40 @@ class LoginCell: UITableViewCell {
     
     @IBOutlet weak var textFieldPron: UITextField!
     
+    let categories = [
+        "Pronome",
+        "Ano que entrou",
+        "Curso",
+        "Local de origem",
+        "Experiência",
+        "Entidades",
+        "Descrição"
+    ]
+    
     func textFieldText(i: Int, user: User){
         let str = textFieldPron.text
-        switch i {
-        case 0:
-            user.pronouns = str
-        case 1:
-            user.year = 20 //mudar depois
-        case 2:
-            user.course = str
-        case 3:
-            user.origin = str
-        case 4:
-            user.experience = [str!]
-        case 5:
-            user.entities = [str!]
-        case 6:
-            user.description = str
-        default:
-            print("")
+        if str != ""{
+            if (textFieldPron.placeholder == "Pronome"){
+                user.origin = str
+            }
+            if (textFieldPron.placeholder == "Ano que entrou"){
+                user.pronouns = str //pron
+            }
+            if (textFieldPron.placeholder == "Curso"){
+                user.entities = [str!] //entid
+            }
+            if (textFieldPron.placeholder == "Local de origem"){
+                user.course = str
+            }
+            if (textFieldPron.placeholder == "Experiência"){
+                user.experience = [str!]
+            }
+            if (textFieldPron.placeholder == "Entidades"){
+                user.year = Int(str!) //ano
+            }
+            if (textFieldPron.placeholder == "Descrição"){
+                user.description = str
+            }
         }
     }
     

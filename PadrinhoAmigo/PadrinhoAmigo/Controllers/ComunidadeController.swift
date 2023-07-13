@@ -30,7 +30,7 @@ class ComunidadeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("entrou view will appear")
-        loggedUser = AppState.shared.loggedUser
+        loggedUser = AppState.shared.getUser()
         print("\(loggedUser?.name)")
         if loggedUser != nil {
             print("agr eh pra atualizar a table view")

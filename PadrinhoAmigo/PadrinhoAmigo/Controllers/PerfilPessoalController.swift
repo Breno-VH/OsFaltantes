@@ -10,7 +10,7 @@ import UIKit
 
 class PerfilPessoalController: UIViewController {
     
-    var displayUser = AppState.shared.loggedUser
+    //private var displayUser = AppState.shared.getUser()
     let categories = [
     "Curso",
     "Ano que entrou",
@@ -45,9 +45,9 @@ class PerfilPessoalController: UIViewController {
         imageProfile.layer.borderColor = UIColor.black.cgColor
         imageProfile.layer.cornerRadius = imageProfile.frame.height/2
         imageProfile.clipsToBounds = true
-        imageProfile.image = displayUser?.img
-        nameLabel.text = displayUser?.name
-        PronomeLabel.text = displayUser?.pronouns
+        imageProfile.image = AppState.shared.getUser()?.img
+        nameLabel.text = AppState.shared.getUser()?.name
+        PronomeLabel.text = AppState.shared.getUser()?.pronouns
       }
     
 }
@@ -75,7 +75,7 @@ extension PerfilPessoalController: UITableViewDataSource, UITableViewDelegate{
         cell.textLabel?.text = categories[indexPath.row]
         //infoLabel.numberOfLines = 3;
         //infoLabel.lineBreakMode = .byWordWrapping
-        cell.infoPersons(user: displayUser, i: indexPath.row)
+        cell.infoPersons(user: AppState.shared.getUser(), i: indexPath.row)
         return cell
     }
     

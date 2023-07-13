@@ -7,6 +7,7 @@
 
 import Foundation
 import CloudKit
+import UIKit
 enum FetchError {
   case fetchingError, noRecords, none
 }
@@ -36,6 +37,20 @@ struct CloudKitManager {
     let records = try result.matchResults.map({ try $0.1.get() })
     return records
   }
+    
+    func fetchUserNameGivenID(id: CKRecord.ID) async throws -> String? {
+        var name: String?
+        do {
+            var result =  try await publicDatabase.record(for: id)
+            name = result["name"] as? String
+            
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+        return name
+        
+    }
 
     func fetch(recordsId: [CKRecord.ID]) async throws-> [CKRecord] {
         var records = [CKRecord]()
@@ -110,9 +125,17 @@ struct CloudKitManager {
     
     func save(user: User)  {
         let record = CKRecord(recordType: recordType)
-        record.setValuesForKeys(["ano": user.year, "curso": user.course,"entidades": user.entities ?? [], "descricao": user.description ?? "", "experiencia": user.experience ?? [], "interesses": user.interests ?? [], "name": user.name, "origem": user.origin!, "pronomes": user.pronouns!, "senha": user.password!, "email": user.email!])
-        //record.setValuesForKeys(["ano": 22, "curso": "geografia","entidades": ["entidade"], "descricao": "", "experiencia": [""], "interesses": [""], "name": "Lari", "origem": "", "pronomes": "", "senha": "", "email": ""])
-        
+        record.setValuesForKeys(["ano": user.year ?? 20, "curso": user.course ?? "","entidades": user.entities ?? [], "descricao": user.description ?? "", "experiencia": user.experience ?? [], "interesses": user.interests ?? [], "name": user.name, "origem": user.origin!, "pronomes": user.pronouns!, "senha": user.password!, "email": user.email!])
+        let image = user.img
+        guard let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("img.jpg") else {return}
+        let data = image?.jpegData(compressionQuality: 1.0)
+        do{
+            try data?.write(to: url)
+            let asset = CKAsset(fileURL: url)
+            record["imagem"] = asset
+        } catch let error{
+            print(error)
+        }
         
         publicDatabase.save(record) { newRecord, error in
             if let error = error {
@@ -122,6 +145,7 @@ struct CloudKitManager {
                     print("SAVED")
                 }
             }
+        
             
         }
        

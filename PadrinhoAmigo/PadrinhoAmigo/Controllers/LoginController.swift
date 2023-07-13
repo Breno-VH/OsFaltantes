@@ -29,7 +29,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             do {
                 if let user = try await attemptLogin(email: emailTextField.text!, password: senhaTextField.text!) {
                     
-                    AppState.shared.loggedUser = user
+                    AppState.shared.setUser(user: user)
                     
                     let storyboard = UIStoryboard(name: "Perfil", bundle: nil)
                     let vc = storyboard.instantiateViewController(withIdentifier: "Profile") as! PerfilPessoalController

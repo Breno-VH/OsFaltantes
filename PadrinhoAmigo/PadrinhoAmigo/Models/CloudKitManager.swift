@@ -100,6 +100,13 @@ struct CloudKitManager {
         return records.first
     }
     
+    func fetchPeopleFromSameCourse(course: String) async throws -> [CKRecord] {
+        let pred = NSPredicate(format: "curso == %@", course)
+        let query = CKQuery(recordType: recordType, predicate: pred)
+        let result = try await publicDatabase.records(matching: query)
+        let records = try result.matchResults.map({ try $0.1.get() })
+        return records
+    }
     
     func save(user: User)  {
         let record = CKRecord(recordType: recordType)

@@ -51,7 +51,8 @@ class PerfilController: UIViewController {
     "Entidades",
     "Interesses",
     "Experiência",
-    "Descrição"
+    "Descrição",
+    "Padrinhos"
     ]
     
     func didTapYesOption() {
@@ -116,6 +117,11 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
     func updateGodFather() {
         print("vamos atualizar a relacao de \(loggedUser?.name) e \(displayUser?.name)")
         var podeApadrinhar = true
+        
+        if loggedUser == nil {
+            podeApadrinhar = false
+        }
+        
         loggedUser?.godParents?.forEach({
             godParent in
             if displayUser?.record?.recordID == godParent {

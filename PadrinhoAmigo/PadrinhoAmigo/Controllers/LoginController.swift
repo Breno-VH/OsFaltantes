@@ -9,7 +9,7 @@ import UIKit
 import CloudKit
 
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
     private let manager = CloudKitManager()
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,6 +20,8 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         senhaTextField.isSecureTextEntry = true
+        self.emailTextField.delegate = self
+        self.senhaTextField.delegate = self
       }
     
     @IBAction func Login1Button(_ sender: Any) {
@@ -58,6 +60,13 @@ class LoginController: UIViewController {
         }
         return nil
         
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return emailTextField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

@@ -10,7 +10,7 @@ import CloudKit
 
 var user: User = User(email: "", password: "", name: "", pronouns: "", year: "", course: "", origin: "", experience: "", interest: "", entities: "", description: "")
 
-class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate, UITextFieldDelegate {
     
     private let manager = CloudKitManager()
     
@@ -78,6 +78,12 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
         ImagemPerfil?.clipsToBounds = true
         //rConfirmarSenhaTextField.isSecureTextEntry = true
         //ImagemPerfil?.image = displayUser?.img
+        self.nameTextField?.delegate = self
+        self.emailTextField?.delegate = self
+        self.SenhaTextField?.delegate = self
+        self.ConfirmarSenhaTextField?.delegate = self
+        self.addInteresseTextField?.delegate = self
+        
         
         tapgasture()
       }
@@ -265,6 +271,12 @@ extension RegistrarPerfilController: UITableViewDataSource, UITableViewDelegate 
         
         ImagemPerfil.image = info[.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return emailTextField.resignFirstResponder()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }

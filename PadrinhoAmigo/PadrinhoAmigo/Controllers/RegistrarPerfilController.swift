@@ -226,8 +226,6 @@ class RegistrarPerfilController: UIViewController, UIImagePickerControllerDelega
                 return false
             }
             return false
-        }
-        return false
     }
 
 }

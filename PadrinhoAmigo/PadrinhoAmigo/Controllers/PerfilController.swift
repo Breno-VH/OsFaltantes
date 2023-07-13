@@ -51,8 +51,8 @@ class PerfilController: UIViewController {
     "Entidades",
     "Interesses",
     "Experiência",
-    "Descrição",
-    "Padrinhos"
+    "Descrição"
+    //"Padrinhos"
     ]
     
     func didTapYesOption() {
@@ -73,12 +73,16 @@ class PerfilController: UIViewController {
         pronounsLabel.text = displayUser?.pronouns
         perfilInfo.delegate = self
         perfilInfo.dataSource = self
+        //perfilInfo.clipsToBounds = true
+        perfilInfo.layer.cornerRadius = 14
+        //perfilInfo.layer.masksToBounds = true
         ButtonMeApadrinhe.configuration?.cornerStyle = .capsule
         ButtonMeApadrinhe.configuration?.background.backgroundColor = .systemCyan
-        BackgroundView.clipsToBounds = true
-        ForegroundView.clipsToBounds = true
-        ForegroundView.layer.cornerRadius = 30
-        ForegroundView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        BackgroundView?.clipsToBounds = true
+        ForegroundView?.clipsToBounds = true
+        ForegroundView?.layer.cornerRadius = 30
+        ForegroundView?.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
@@ -109,6 +113,8 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
         cell.textLabel?.text = categories[indexPath.row]
         infoLabel.numberOfLines = 3;
         infoLabel.lineBreakMode = .byWordWrapping
+        cell.rightLabel.numberOfLines = 3
+        cell.rightLabel.lineBreakMode =  .byWordWrapping
         cell.infoPersons(user: displayUser, i: indexPath.row)
         return cell
     }

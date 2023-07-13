@@ -11,6 +11,8 @@ import CloudKit
 
 
 class User {
+    private var manager = CloudKitManager()
+    
     var name: String = ""
     var year: Int?
     var origin: String?
@@ -26,6 +28,7 @@ class User {
     var godChildren: [CKRecord.ID]?
     var email: String?
     var password: String?
+    var godParentsName = [String]()
     var isFreshmen: Bool {
         if year == 23 {
             return true
@@ -48,6 +51,9 @@ class User {
     }
     
     init(record: CKRecord) {
+        var afilhados: [CKRecord.Reference]
+        var padrinhos: [CKRecord.Reference]
+        
         self.record = record
         self.name = record["name"] as? String ?? ""
         self.year = record["ano"] as? Int
@@ -58,8 +64,25 @@ class User {
         self.experience = record["experiencia"] as? [String] ?? []
         self.description = record["descricao"] as? String ?? ""
         self.pronouns = record["pronomes"] as? String ?? ""
-        self.godParents = record["padrinhos"] as? [CKRecord.ID] ?? []
-        self.godChildren = record["afilhados"] as? [CKRecord.ID] ?? []
+        padrinhos = record["padrinhos"] as? [CKRecord.Reference] ?? []
+        afilhados = record["afilhados"] as? [CKRecord.Reference] ?? []
+        self.godParents = padrinhos.map( { $0.recordID } )
+        self.godChildren = afilhados.map( { $0.recordID } )
+        
+        Task {
+            var ehCalouro = self.isFreshmen
+            var nameParents = [CKRecord.ID]()
+            if ehCalouro {
+                nameParents = self.godParents ?? []
+            } else {
+                nameParents = self.godChildren ?? []
+            }
+            
+            godParentsName = try await nameParents.asyncMap( { id in
+                try await manager.fetchUserNameGivenID(id: id) ?? ""
+            } )
+        }
+        
         
         
         let imageAsset = record["imagem"] as? CKAsset
@@ -117,4 +140,38 @@ extension User {
     func formatYear() -> String{
         return "0" + String(self.year!)
     }
+    
+    
+    func formatName(array: [String?], sep: String) -> String{
+        
+        var formattedString: String = ""
+        for i in array{
+            if let str = i {
+                formattedString += str
+                if (str != array[array.count-1]){
+                    formattedString += sep
+                }
+            }
+            
+        }
+        return formattedString
+    }
 }
+
+
+extension Sequence {
+    func asyncMap<T>(
+        _ transform: (Element) async throws -> T
+    ) async rethrows -> [T] {
+        var values = [T]()
+
+        for element in self {
+            try await values.append(transform(element))
+        }
+
+        return values
+    }
+}
+
+
+

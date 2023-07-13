@@ -44,7 +44,7 @@ class PerfilController: UIViewController {
           self.present(alert, animated: true, completion: nil)
         }
     
-    let categories = [
+    var categories = [
     "Curso",
     "Ano que entrou",
     "Origem",
@@ -52,18 +52,27 @@ class PerfilController: UIViewController {
     "Interesses",
     "Experiência",
     "Descrição"
-    //"Padrinhos"
     ]
+    
     
     func didTapYesOption() {
         ButtonMeApadrinhe.configuration?.background.backgroundColor = .systemGray
         ButtonMeApadrinhe.configuration?.cornerStyle = .capsule
         buttonLabel.text = "Solicitação enviada"
         ButtonMeApadrinhe.isEnabled = false
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if displayUser!.isFreshmen {
+            categories.append("Padrinhos")
+        } else {
+            categories.append("Afilhados")
+        }
+        print(user.godChildren)
+        
+        
         imageProfile.layer.masksToBounds = false
         imageProfile.layer.borderColor = UIColor.black.cgColor
         imageProfile.layer.cornerRadius = imageProfile.frame.height/2
@@ -115,7 +124,9 @@ extension PerfilController: UITableViewDataSource, UITableViewDelegate{
         infoLabel.lineBreakMode = .byWordWrapping
         cell.rightLabel.numberOfLines = 3
         cell.rightLabel.lineBreakMode =  .byWordWrapping
-        cell.infoPersons(user: displayUser, i: indexPath.row)
+        Task {
+            try await cell.infoPersons(user: displayUser, i: indexPath.row)
+        }
         return cell
     }
     
